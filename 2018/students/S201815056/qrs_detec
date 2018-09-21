@@ -18,3 +18,10 @@ subplot(411);plot(ecg(tshow));
 subplot(412);plot(y1(tshow));
 subplot(413);plot(y2(tshow));
 subplot(414);plot(y3(tshow));
+%%
+pos = [44 240 300];
+x= ecg (1000:2000);
+figure;
+plot(x);
+hold on;
+plot(pos)
