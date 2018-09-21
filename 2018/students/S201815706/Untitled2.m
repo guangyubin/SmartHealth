@@ -2,11 +2,14 @@
  d = fread(fid,Inf,'short');
  fclose(fid);
  %plot(d(1000:4000));
- fmaxd = 5;%½ØÖ¹ÆµÂÊÎª5Hz
- fs = 250;%²ÉÑùÂÊ250
+ fmaxd = 5;%æˆªæ­¢é¢‘ç‡ä¸º5Hz
+ fs = 250;%é‡‡æ ·ç‡250
  fmaxn = fmaxd/(fs/2);
- f1=medfilt2(d,3);
+ [b,a] = butter(1,fmaxn,'low');
+ [e,f] = butter(1,20/(250/2),'low');
+ f1 = filter(b,a,d);%é€šè¿‡5Hzä½é€šæ»¤æ³¢å™¨çš„ä¿¡å·
+ f2 = d-f1;
  subplot(211),plot(d(1000:4000),'b');
- title('³õÊ¼ĞÅºÅ');
- subplot(212),plot(f1(1000:4000),'b');
- title('ÂË²¨ºóĞÅºÅ');
+ title('åˆå§‹ä¿¡å·');
+ subplot(212),plot(f2(1000:4000),'b');
+ title('æ»¤æ³¢åä¿¡å·');
