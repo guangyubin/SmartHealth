@@ -7,7 +7,7 @@
  fmaxn = fmaxd/(fs/2);
  [b,a] = butter(1,fmaxn,'low');
  [e,f] = butter(1,20/(250/2),'low');
- f1 = filter(b,a,d);%通过5Hz低通滤波器的信号
+ f1 = filter(b,a,d);
  f2 = d-f1;
  subplot(211),plot(d(1000:4000),'b');
  title('初始信号');
