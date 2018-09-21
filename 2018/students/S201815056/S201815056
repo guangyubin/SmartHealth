@@ -13,13 +13,13 @@ y2=sig-y;          %去除这一段信号，得到去基线漂移的信号
 subplot(2,1,1),plot(d(1000:4000),'b');
 subplot(2,1,2),plot(cc(1000:4000),'b');
 sig  = double(sig);
-
+%%
 for ii=1:100
     x = sig(ii*2500:ii*2500+2499);
     x = x-mean(x);
     Fx(ii,:) = abs(fft(x));
 end
-
-fbin = 0;1/10:fs-1/(10);
+%%
+fbin = 0:1/10:fs-1/(10);
 figure;
 plot(fbin,mean(Fx,1));
