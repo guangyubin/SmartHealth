@@ -9,28 +9,28 @@
    [b,a]= butter(2,[8 20]/(fs/2));
  sig1=filter(b,a,sig); %estimated baseline
  sig1=diff(sig1); 
- sig2=abs(sig1);  %È¡¾ø¶ÔÖµ
+ sig2=abs(sig1);  %å–ç»å¯¹å€¼
  sig3=filter(ones(1,5)/5,1,sig2);
 %---------------painting---------------%
  figure(1);
- subplot(411);plot(t,sig(1:450199));xlim([200 210]);title('Ô­Ê¼ĞÅºÅ');xlabel('Time(s)');ylabel('ECG(mv)');
- subplot(412);plot(t,sig1);xlim([200 210]);title('ÂË²¨ºóĞÅºÅ');xlabel('Time(s)');ylabel('ECG(mv)');
- subplot(413);plot(t,sig2);xlim([200 210]);title('¶ÔÂË²¨ºóĞÅºÅÈ¡¾ø¶ÔÖµ');xlabel('Time(s)');ylabel('ECG(mv)');
- subplot(414);plot(t,sig3);xlim([200 210]);title('¶ÔÂË²¨ºóĞÅºÅµÄ¾ø¶ÔÖµÂË²¨');xlabel('Time(s)');ylabel('ECG(mv)');
+ subplot(411);plot(t,sig(1:450199));xlim([200 210]);title('åŸå§‹ä¿¡å·');xlabel('Time(s)');ylabel('ECG(mv)');
+ subplot(412);plot(t,sig1);xlim([200 210]);title('æ»¤æ³¢åä¿¡å·');xlabel('Time(s)');ylabel('ECG(mv)');
+ subplot(413);plot(t,sig2);xlim([200 210]);title('å¯¹æ»¤æ³¢åä¿¡å·å–ç»å¯¹å€¼');xlabel('Time(s)');ylabel('ECG(mv)');
+ subplot(414);plot(t,sig3);xlim([200 210]);title('å¯¹æ»¤æ³¢åä¿¡å·çš„ç»å¯¹å€¼æ»¤æ³¢');xlabel('Time(s)');ylabel('ECG(mv)');
 %---------------Mark the R and S waves---------------%
- [maxv_sig,maxl_sig]=findpeaks(sig1,'minpeakdistance',125); %maxv·å·åÖµµã,maxl·å·åÖµµã¶ÔÓ¦µÄÎ»ÖÃ,×îĞ¡¼ä¸ô=0.5s*250 ?
- [maxv_sig,maxl_sig]=findpeaks(sig1,'minpeakheight',8);%Éè¶¨·åÖµµÄ×îĞ¡¸ß¶È
+ [maxv_sig,maxl_sig]=findpeaks(sig1,'minpeakdistance',125); %maxvå³°å³°å€¼ç‚¹,maxlå³°å³°å€¼ç‚¹å¯¹åº”çš„ä½ç½®,æœ€å°é—´éš”=0.5s*250
+ [maxv_sig,maxl_sig]=findpeaks(sig1,'minpeakheight',8);%è®¾å®šå³°å€¼çš„æœ€å°é«˜åº¦
  sig4=-sig1;
  [minv_sig,minl_sig]=findpeaks(sig4,'minpeakdistance',125); 
- [minv_sig,minl_sig]=findpeaks(sig4,'minpeakheight',8);%Éè¶¨·åÖµµÄ×îĞ¡¸ß¶È
+ [minv_sig,minl_sig]=findpeaks(sig4,'minpeakheight',8);%è®¾å®šå³°å€¼çš„æœ€å°é«˜åº¦
  maxl_sig=maxl_sig/fs;minl_sig=minl_sig/fs;
   figure(2);hold on;
- plot(t,sig1); %»æÖÆÔ­²¨ĞÎ
- plot(maxl_sig,maxv_sig,'*','color','R');%»æÖÆ×î´óÖµµã
+ plot(t,sig1); %ç»˜åˆ¶åŸæ³¢å½¢
+ plot(maxl_sig,maxv_sig,'*','color','R');%ç»˜åˆ¶æœ€å¤§å€¼ç‚¹
  hold on;
- plot(minl_sig,-minv_sig,'*','color','G'); %»æÖÆ×îĞ¡Öµµã
- xlim([200 220]);xlabel('Time(s)');ylabel('ECG(mv)');title('¶ÔR¡¢S²¨±ê¼ÇºóĞÅºÅ');
- legend('ECG²¨','R²¨','S²¨');
+ plot(minl_sig,-minv_sig,'*','color','G'); %ç»˜åˆ¶æœ€å°å€¼ç‚¹
+ xlim([200 220]);xlabel('Time(s)');ylabel('ECG(mv)');title('å¯¹Rã€Sæ³¢æ ‡è®°åä¿¡å·');
+ legend('ECGæ³¢','Ræ³¢','Sæ³¢');
  %---------------caculate Heart rate---------------%
- hrate1=length(maxv_sig)*fs*60/L;  %¶ÔR²¨½øĞĞ¼ÆÊıµÃµ½µÄĞÄÂÊ£¬µ¥Î»£¨´Î/min£©
- hrate2=length(minv_sig)*fs*60/L;  %¶ÔS²¨½øĞĞ¼ÆÊıµÃµ½µÄĞÄÂÊ£¬µ¥Î»£¨´Î/min£©
+ hrate1=length(maxv_sig)*fs*60/L;  %å¯¹Ræ³¢è¿›è¡Œè®¡æ•°å¾—åˆ°çš„å¿ƒç‡ï¼Œå•ä½ï¼ˆæ¬¡/minï¼‰
+ hrate2=length(minv_sig)*fs*60/L;  %å¯¹Sæ³¢è¿›è¡Œè®¡æ•°å¾—åˆ°çš„å¿ƒç‡ï¼Œå•ä½ï¼ˆæ¬¡/minï¼‰
