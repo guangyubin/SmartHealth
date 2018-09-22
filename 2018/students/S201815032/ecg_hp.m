@@ -14,11 +14,10 @@ sig1=filter(b,a,sig);   %ECG signal after filtering
 sig1=sig-sig1;  %estimated baseline;
 %---------------painting---------------%
 t=1/fs:1/fs:L/fs;
-figure(1);subplot(211);plot(t,sig);xlabel('Time(s)');ylabel('ECG(mv)');xlim([200 210]);title('Ô­Ê¼ĞÅºÅ');
-subplot(212);plot(t,sig1);xlabel('Time(s)');ylabel('ECG1(mv)');xlim([200 210]);title('°ÍÌØÎÖË¹µÍÍ¨ÂË²¨ºóµÄĞÅºÅ');
+figure(1);subplot(211);plot(t,sig);xlabel('Time(s)');ylabel('ECG(mv)');xlim([200 210]);title('åŸå§‹ä¿¡å·');
+subplot(212);plot(t,sig1);xlabel('Time(s)');ylabel('ECG1(mv)');xlim([200 210]);title('å·´ç‰¹æ²ƒæ–¯ä½é€šæ»¤æ³¢åçš„ä¿¡å·');
 
-[Fx1,fbin1]=ecg_psd(sig,fs,10,100);
-[Fx2,fbin2]=ecg_psd(sig1,fs,10,100);
+[Fx1,fbin1]=ecg_psd(sig,fs,10,100); %psd of sig
+[Fx2,fbin2]=ecg_psd(sig1,fs,10,100); %psd of sig1
 figure(2);plot(fbin1,Fx1,'r');hold on;plot(fbin2,Fx2,'b');
-legend('Ô­Ê¼ĞÅºÅ¹¦ÂÊÆ×','ÂË²¨ºóµÄ¹¦ÂÊÆ×');xlabel('f(Hz)');ylabel('psd(db)');
-
+legend('åŸå§‹ä¿¡å·åŠŸç‡è°±','æ»¤æ³¢åçš„åŠŸç‡è°±');xlabel('f(Hz)');ylabel('psd(db)');
