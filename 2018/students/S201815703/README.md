@@ -16,8 +16,8 @@
 <img src="./1.jpg"/>
 <br>
 <br>
-<p>&nbsp;&nbsp; [Fx,fbin] = ecg_psd(d,250,10,100);<br>
-   &nbsp;&nbsp;[Fx1,fbin] = ecg_psd(cc,250,10,100);<br></p>
+<p>&nbsp;&nbsp;[Fx,fbin] = ecg_psd(sig,250,10,100);% ecg_psd 函数代码见ecg_psd.m文件<br>
+   &nbsp;&nbsp;[Fx1,fbin] = ecg_psd(new_sig,250,10,100);<br></p>
 <p>&nbsp;&nbsp;%绘图<br>
    figure;  plot(fbin,mean(Fx,1))<br>
          hold on, plot(fbin,mean(Fx1,1),'red');<br>
