@@ -13,4 +13,4 @@
 <p>&nbsp;&nbsp;subplot(2,1,1) , plot(sig(1000:4000),'b');<br></p>
 <p>&nbsp;&nbsp;subplot(2,1,1) , plot(filt_sig(1000:4000),'b');<br></p>
 <p>图形如下:</p><br>
-<img href="./心电信号原始信号与滤波信号对比图.png"/>
+<img href="./1.jpg"/>
