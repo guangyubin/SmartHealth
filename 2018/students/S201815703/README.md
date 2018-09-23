@@ -13,4 +13,4 @@
 <p>&nbsp;&nbsp;subplot(2,1,1) , plot(sig(1000:4000),'b');<br></p>
 <p>&nbsp;&nbsp;subplot(2,1,1) , plot(filt_sig(1000:4000),'b');<br></p>
 <p>图形如下:</p><br>
-<img src="SmartHealth/2018/students/S201815703/1.jpg"/>
+<img src="./1.jpg"/>
