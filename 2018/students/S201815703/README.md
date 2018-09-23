@@ -14,3 +14,13 @@
 <p>&nbsp;&nbsp;subplot(2,1,1) , plot(filt_sig(1000:4000),'b');<br></p>
 <p>图形如下:</p><br>
 <img src="./1.jpg"/>
+<br>
+<br>
+<p>&nbsp;&nbsp; [Fx,fbin] = ecg_psd(d,250,10,100);<br>
+   &nbsp;&nbsp;[Fx1,fbin] = ecg_psd(cc,250,10,100);<br></p>
+<p>&nbsp;&nbsp;%绘图<br>
+   figure;  plot(fbin,mean(Fx,1))<br>
+         hold on, plot(fbin,mean(Fx1,1),'red');<br>
+</p><br>
+ <p>图形如下:</p><br>
+<img src="./滤波与原始信号频域分析对比图.png"/>
