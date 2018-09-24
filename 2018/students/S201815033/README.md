@@ -5,7 +5,7 @@
 # 基于MATLAB的心电数据处理
 ## 一.滤除心电信号的基线漂移
 
-fid = fopen('../../mat1/data/1520309088000.dat','rb'); %打开路径<br>
+fid = fopen('../../mat1/data/1520309088000.dat','rb');                  %打开路径<br>
 sig = fread(fid,inf,'short');  %读取文件<br>
 fclose(fid);      %关闭文件<br>
 fs = 250;    %采样率250hz<br>
