@@ -18,5 +18,5 @@ sig1=sig-sig1;  %去除这一段信号，得到去基漂信号<br>
 figure(1);subplot(211);plot(sig(1000:4000));xlabel('f(hz)');ylabel('幅值');title('原始信号');<br>
 subplot(212);plot(sig1(1000:4000));xlabel('f(hz)');ylabel('幅值');title('去除基线漂移后的信号');<br>
 
-![ecg lp](https://github.com/SmartHealth/master/2018/students/S201815033/matlab%20figure/ecg_lp.jpg) 
+![ecg lp](https://github.com/guangyubin/SmartHealth/blob/master/2018/students/S201815033/matlab%20figure/ecg_lp.jpg) 
 <img src="./matlab figure/ecg_lp.jpg"/>
