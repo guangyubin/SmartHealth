@@ -24,3 +24,10 @@
 </p><br>
  <p>图形如下:</p><br>
 <img src="./滤波与原始信号频域分析对比图.png"/>
+
+<p>未去重标点代码如下:<br>
+&nbsp;&nbsp;[Y,X] = ecg_drawPoint(filt_sig,1000,4000,40);<br>
+&nbsp;&nbsp;%绘图<br>
+&nbsp;&nbsp;subplot(2,1,1) , plot(sig(1000:4000),'b');<br>
+&nbsp;&nbsp;subplot(2,1,1) , plot(filt_sig(1000:4000),'b') hold on,plot(X,Y,'.r');<br></p>
+<img src="./未去重标点.png"/>
