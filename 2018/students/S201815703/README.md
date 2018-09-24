@@ -30,4 +30,4 @@
 &nbsp;&nbsp;%绘图<br>
 &nbsp;&nbsp;subplot(2,1,1) , plot(sig(1000:4000),'b');<br>
 &nbsp;&nbsp;subplot(2,1,1) , plot(filt_sig(1000:4000),'b') hold on,plot(X,Y,'.r');<br></p>
-<img src="./未去重标点.png"/>
+<img src="./未去重标点.jpg"/>
