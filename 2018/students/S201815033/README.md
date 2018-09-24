@@ -1,7 +1,8 @@
 智能医学仪器设计
 ==
 #基于MATLAB的心电数据处理
-* 1滤除心电信号的基线漂移
+* 一.滤除心电信号的基线漂移
+
 <br>fid = fopen('../../mat1/data/1520309088000.dat','rb'); %打开路径
 <br>sig = fread(fid,inf,'short');  %读取文件
 <br>fclose(fid);  %关闭文件
@@ -16,3 +17,4 @@
 
 <br>figure(1);subplot(211);plot(sig(1000:4000));xlabel('f(hz)');ylabel('幅值');title('原始信号');
 <br>subplot(212);plot(sig1(1000:4000));xlabel('f(hz)');ylabel('幅值');title('去除基线漂移后的信号');
+![](https://github.com/SmartHealth/2018/students/S201815033/matlab figure/ecg_lp.gif) 
