@@ -1,7 +1,7 @@
 智能医学仪器设计
 ==
-#基于MATLAB的心电数据处理
-* 一.滤除心电信号的基线漂移
+# 基于MATLAB的心电数据处理
+## 一.滤除心电信号的基线漂移
 
 fid = fopen('../../mat1/data/1520309088000.dat','rb'); %打开路径<br>
 sig = fread(fid,inf,'short');  %读取文件<br>
@@ -20,7 +20,7 @@ subplot(212);plot(sig1(1000:4000));xlabel('f(hz)');ylabel('幅值');title('去�
 
 ![ecg lp](https://github.com/guangyubin/SmartHealth/blob/master/2018/students/S201815033/matlab%20figure/ecg_lp.jpg) 
 
-* 二.心电信号功率谱
+## 二.心电信号功率谱
 
 clc;<br>
 clear;<br>
@@ -40,7 +40,7 @@ sig2=d-dd;          %去除这一段信号，得到去基线漂移的信号<br>
 figure;plot(fbin1,Fx1) ;xlabel('f(Hz)');ylabel('dB/Hz');hold on;plot(fbin2,Fx2);<br>
 ![ecg_p](https://github.com/guangyubin/SmartHealth/blob/master/2018/students/S201815033/matlab%20figure/ecg_p.jpg)
 
-* 二.对心电信号R波进行标记
+## 三.对心电信号R波进行标记
 
 fid = fopen('../../mat1/data/1520309088000.dat','rb');<br>
 sig = fread(fid,inf,'short');<br>
