@@ -17,5 +17,4 @@
 
 <br>figure(1);subplot(211);plot(sig(1000:4000));xlabel('f(hz)');ylabel('幅值');title('原始信号');
 <br>subplot(212);plot(sig1(1000:4000));xlabel('f(hz)');ylabel('幅值');title('去除基线漂移后的信号');
-
-<br>![](https://github.com/SmartHealth/2018/students/S201815033/matlab figure/ecg_lp.gif) 
+<br>![](https://github.com/SmartHealth/2018/students/S201815033/matlab figure/ecg_lp.png) 
