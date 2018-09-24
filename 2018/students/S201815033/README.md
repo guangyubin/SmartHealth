@@ -55,10 +55,10 @@ y2 = abs(y1);  %取绝对值<br>
 y3 = filter(ones(1,5),1,y2);  %平滑滤波<br>
 tshow = 100*fs:120*fs;%显示100s到120s数据<br>
 %---------------------绘图------------------------%<br>
-figure(1);subplot(411);plot(sig(tshow));<br>
-subplot(412);plot(y1(tshow));<br>
-subplot(413);plot(y2(tshow));<br>
-subplot(414);plot(y3(tshow));<br>
+figure(1);subplot(411);plot(sig(tshow));;title('滤波后信号');xlabel('f(Hz)');ylabel('幅值');<br>
+subplot(412);plot(y1(tshow));title('差分运算后的信号');xlabel('f(Hz)');ylabel('幅值');<br>
+subplot(413);plot(y2(tshow));title('取绝对值后的信号');xlabel('f(Hz)');ylabel('幅值');<br>
+subplot(414);plot(y3(tshow));title('平滑后的信号');xlabel('f(Hz)');ylabel('幅值');<br>
 
 
 % ---------------------标记R波---------------------%<br>
@@ -72,5 +72,6 @@ hold on;<br>
 plot(S_locs,S_pks,'*','color','r');<br>
 legend('ECG波','R波标记');<br>
 
-
+![ecg_r](https://github.com/guangyubin/SmartHealth/blob/master/2018/students/S201815033/matlab%20figure/ecg_r.jpg)
+![ecg_rb](https://github.com/guangyubin/SmartHealth/blob/master/2018/students/S201815033/matlab%20figure/ecg_rb.jpg)
 
