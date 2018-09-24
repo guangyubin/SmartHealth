@@ -11,7 +11,8 @@
 <br>[b,a]= butter(1,fmaxn,'low');  % 设计一个一阶巴特沃斯低通滤波器
 <br>sig1=filter(b,a,sig);   %通过0.5hz低通滤波器
 <br>sig1=sig-sig1;  %去除这一段信号，得到去基漂信号
-<br>%-----绘图---------------%
+
+<br>%-----------绘图---------------%
 
 <br>figure(1);subplot(211);plot(sig(1000:4000));xlabel('f(hz)');ylabel('幅值');title('原始信号');
 <br>subplot(212);plot(sig1(1000:4000));xlabel('f(hz)');ylabel('幅值');title('巴特沃斯低通滤波后的信号');
