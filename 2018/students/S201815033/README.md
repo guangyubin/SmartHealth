@@ -95,11 +95,37 @@ y1 = filter(b,a,sig);<br>
 y1 = diff(y1); %差分运算<br>
 y2 = abs(y1);  %取绝对值<br>
 y3 = filter(ones(1,5)/5,1,y2);  %平滑滤波<br>
-% tshow =100 *fs:120*fs;%显示100s到120s数据<br>
-%-------------------绘图----------------------%<br>
-figure(1);subplot(411);plot(time,sig);title('原始信号');xlim([100 110]);xlabel('time(s)');ylabel('幅值');<br>
-subplot(412);plot(t,y1);title('差分运算后的信号');xlim([100 110]);xlabel('time(s)');ylabel('幅值');<br>
-subplot(413);plot(t,y2);title('取绝对值后的信号');xlim([100 110]);xlabel('time(s)');ylabel('幅值');<br>
-subplot(414);plot(t,y3);title('平滑后的信号');xlim([100 110]);xlabel('time(s)');ylabel('幅值');<br>
+for ii = 1:10<br>
+    x = y1(((ii-1)*fs+1):(ii*fs));<br>
+    thr(ii) = max(x);<br>
+   
+end<br>
+thr0 = min(thr)*0.9;<br>
 
+flag = 0 ;<br>
+ii = 1;<br>
+m = 1;<br>
+qrs = [];<br>
+	
+while (ii < length(y1))<br>
+    switch(flag)<br>
+        case 0<br>
+            if y1(ii) > thr0<br>
+                if y1(ii) <= y1(ii-1)<br>
+                    flag = 1;<br>
+                    qrs(m) = ii-1;<br>
+                    m = m+1;<br>
+                end<br>
+            end<br>
+        case 1
+            if y1(ii) < thr0<br>
+                flag = 0;<br>
+            end<br>
+    end<br>
+    ii = ii+1;<br>
+end<br>
+
+figure;plot(y1);xlim([1000 5000]);hold on;plot(qrs,y1(qrs),'*r');<br>
+
+![ecg_det_100](https://github.com/guangyubin/SmartHealth/blob/master/2018/students/S201815033/matlab%20figure/ecg_det_100.jpg)
 
