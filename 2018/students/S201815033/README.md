@@ -75,8 +75,8 @@ hold on;<br>
 plot(S_locs,S_pks,'*','color','r');<br>
 legend('ECG波','R波标记');<br>
 
-![ecg_r](https://github.com/guangyubin/SmartHealth/blob/master/2018/students/S201815033/matlab%20figure/ecg_r.jpg)
-![ecg_rb](https://github.com/guangyubin/SmartHealth/blob/master/2018/students/S201815033/matlab%20figure/ecg_rb.jpg)
+![ecg_r](https://github.com/guangyubin/SmartHealth/blob/master/2018/students/S201815033/matlab%20figure/ecg_det1.jpg)
+![ecg_rb](https://github.com/guangyubin/SmartHealth/blob/master/2018/students/S201815033/matlab%20figure/ecg_det2.jpg)
 
 * （2） 100.dat数据进行处理
 
