@@ -16,4 +16,4 @@
 	%绘图
 	figure(1);subplot(211);plot(ECG_data(1000:4000));title('原始信号');
 	subplot(212);plot(ECG_filter1(1000:4000));title('滤除基线漂移后的信号');
-	![ecg_psd](https://github.com/guangyubin/SmartHealth/blob/master/2018/students/S201815052/matlab_figure/ECG_filter1.jpg)
+	![ECG_filter1](https://github.com/guangyubin/SmartHealth/blob/master/2018/students/S201815052/matlab_figure/ECG_filter1.jpg)
