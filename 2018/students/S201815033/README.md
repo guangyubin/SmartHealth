@@ -97,9 +97,9 @@ y2 = abs(y1);  %取绝对值<br>
 y3 = filter(ones(1,5)/5,1,y2);  %平滑滤波<br>
 % tshow =100 *fs:120*fs;%显示100s到120s数据<br>
 %-------------------绘图----------------------%<br>
-figure(1);subplot(411);plot(time,sig);title('原始信号');xlim([100 110]);xlabel('f(Hz)');ylabel('幅值');<br>
-subplot(412);plot(t,y1);title('差分运算后的信号');xlim([100 110]);xlabel('f(Hz)');ylabel('幅值');<br>
-subplot(413);plot(t,y2);title('取绝对值后的信号');xlim([100 110]);xlabel('f(Hz)');ylabel('幅值');<br>
-subplot(414);plot(t,y3);title('平滑后的信号');xlim([100 110]);xlabel('f(Hz)');ylabel('幅值');<br>
+figure(1);subplot(411);plot(time,sig);title('原始信号');xlim([100 110]);xlabel('time(s)');ylabel('幅值');<br>
+subplot(412);plot(t,y1);title('差分运算后的信号');xlim([100 110]);xlabel('time(s)');ylabel('幅值');<br>
+subplot(413);plot(t,y2);title('取绝对值后的信号');xlim([100 110]);xlabel('time(s)');ylabel('幅值');<br>
+subplot(414);plot(t,y3);title('平滑后的信号');xlim([100 110]);xlabel('time(s)');ylabel('幅值');<br>
 
 
