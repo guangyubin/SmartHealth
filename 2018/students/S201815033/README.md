@@ -43,7 +43,7 @@ figure;plot(fbin1,Fx1) ;xlabel('f(Hz)');ylabel('dB/Hz');hold on;plot(fbin2,Fx2);
 ![ecg_p](https://github.com/guangyubin/SmartHealth/blob/master/2018/students/S201815033/matlab%20figure/ecg_p.jpg)
 
 ## 三.对心电信号R波进行标记
-* （1）.1520309088000.dat数据进行处理
+* （1） 1520309088000.dat数据进行处理
 
 fid = fopen('../../mat1/data/1520309088000.dat','rb');<br>
 sig = fread(fid,inf,'short');<br>
@@ -77,4 +77,29 @@ legend('ECG波','R波标记');<br>
 
 ![ecg_r](https://github.com/guangyubin/SmartHealth/blob/master/2018/students/S201815033/matlab%20figure/ecg_r.jpg)
 ![ecg_rb](https://github.com/guangyubin/SmartHealth/blob/master/2018/students/S201815033/matlab%20figure/ecg_rb.jpg)
+
+* （2） 100.dat数据进行处理
+
+clc;clear;<br>
+fid = fopen('../../mat1/data/100.dat','rb');<br>
+sig = fread(fid,inf,'short');<br>
+fclose(fid);<br>
+
+fs = 250;  %采样率250hz<br>
+N = length(sig);<br>
+time = (0:N-1)/fs;<br>
+N = length(sig);<br>
+t=1/fs:1/fs:(N-1)/fs;<br>
+[b,a] = butter(2,[8 20]/(fs/2)); %带通滤波器，截止频率8hz~20hz<br>
+y1 = filter(b,a,sig);<br>
+y1 = diff(y1); %差分运算<br>
+y2 = abs(y1);  %取绝对值<br>
+y3 = filter(ones(1,5)/5,1,y2);  %平滑滤波<br>
+% tshow =100 *fs:120*fs;%显示100s到120s数据<br>
+%-------------------绘图----------------------%<br>
+figure(1);subplot(411);plot(time,sig);title('原始信号');xlim([100 110]);xlabel('f(Hz)');ylabel('幅值');<br>
+subplot(412);plot(t,y1);title('差分运算后的信号');xlim([100 110]);xlabel('f(Hz)');ylabel('幅值');<br>
+subplot(413);plot(t,y2);title('取绝对值后的信号');xlim([100 110]);xlabel('f(Hz)');ylabel('幅值');<br>
+subplot(414);plot(t,y3);title('平滑后的信号');xlim([100 110]);xlabel('f(Hz)');ylabel('幅值');<br>
+
 
