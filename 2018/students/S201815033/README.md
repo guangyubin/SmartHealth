@@ -43,6 +43,7 @@ figure;plot(fbin1,Fx1) ;xlabel('f(Hz)');ylabel('dB/Hz');hold on;plot(fbin2,Fx2);
 ![ecg_p](https://github.com/guangyubin/SmartHealth/blob/master/2018/students/S201815033/matlab%20figure/ecg_p.jpg)
 
 ## 三.对心电信号R波进行标记
+* 1.1520309088000.dat数据进行处理
 
 fid = fopen('../../mat1/data/1520309088000.dat','rb');<br>
 sig = fread(fid,inf,'short');<br>
