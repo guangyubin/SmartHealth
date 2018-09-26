@@ -127,5 +127,8 @@ end<br>
 
 figure;plot(y1);xlim([1000 5000]);hold on;plot(qrs,y1(qrs),'*r');<br>
 
+%------------------心率计算--------------------%<br>
+hrate = length(y1(qrs))*fs*60/N<br>
+
 ![ecg_det_100](https://github.com/guangyubin/SmartHealth/blob/master/2018/students/S201815033/matlab%20figure/ecg_det_100.jpg)
 
