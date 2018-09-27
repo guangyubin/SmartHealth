@@ -33,3 +33,5 @@
  fbin=0:1/10:fs-1/(10);
  figure;plot(fbin,mean(Fx,1))
 ```
+### 2.图像
+[通过0.5HZ低通滤波器的信号](https://github.com/guangyubin/SmartHealth/blob/master/2018/students/S201815706/image/untitled1.jpg)
