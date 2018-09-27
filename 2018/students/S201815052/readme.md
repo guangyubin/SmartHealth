@@ -17,3 +17,38 @@
 	figure(1);subplot(211);plot(ECG_data(1000:4000));title('原始信号');
 	subplot(212);plot(ECG_filter1(1000:4000));title('滤除基线漂移后的信号');
 ![ECG_filter1](https://github.com/guangyubin/SmartHealth/blob/master/2018/students/S201815052/matlab_figure/ECG_filter1.jpg)
+
+	while (i < length(ECG_filter))
+		switch(flag)
+			case 0
+				RR_count = RR_count + 1;
+				if ECG_filter(i) > thr0   %寻找大于阈值的点
+					if ECG_filter(i) <= ECG_filter(i-1)  % R点判断
+						if m>1
+							if RR_count <75
+								thr0 = thr0 * 1.2;    %阈值调整
+							end
+							if RR_count>500
+								thr0 = thr0 * 0.8;     %阈值调整
+							end
+						end
+						RR_count = 0;
+						flag = 1;
+						qrs(m) = i-1;    % QRS顶点
+						m = m+1;
+					end          
+				 end
+				%break;          
+			case 1
+				 RR_count = RR_count + 1;
+				if ECG_filter(i) < thr0;  % 寻找小于阈值的点
+					flag = 0;                
+				end
+				%break;
+		end
+		if (m-1) >=4
+		   count_coverage = (qrs(m-1)-qrs(m-4))/3 ;   %3个RR间期求平均
+		   hrate(m-1) = 60 *250/count_coverage;     %心率计算
+		end
+		i = i + 1;
+	end
