@@ -5,6 +5,7 @@
 ![ecg_est](https://github.com/guangyubin/SmartHealth/blob/master/2018/students/S201815061/figure/ecg_est.jpg)
 ![ecg_power](https://github.com/guangyubin/SmartHealth/blob/master/2018/students/S201815061/figure/ecg_power.jpg)
 ![ecg_qrsdet](https://github.com/guangyubin/SmartHealth/blob/master/2018/students/S201815061/figure/ecg_qrsdet.jpg)
-![ecg_qrsdet2]()
+![ecg_qrsdet2](https://github.com/guangyubin/SmartHealth/blob/master/2018/students/S201815061/figure/ecg_qrsdet2.jpg)
+![ecg_100]()
 
    
