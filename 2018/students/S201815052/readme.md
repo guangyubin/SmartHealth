@@ -18,7 +18,6 @@
 	subplot(212);plot(ECG_filter1(1000:4000));title('滤除基线漂移后的信号');
 ![ECG_filter1](https://github.com/guangyubin/SmartHealth/blob/master/2018/students/S201815052/matlab_figure/ECG_filter1.jpg)
 
-
 ###二、QRS波R点的检测与标记
 检测部分代码如下：
 	while (i < length(ECG_filter))
