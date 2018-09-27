@@ -24,5 +24,8 @@ ________
 ________
 找出前10S内心电信号的最大值thr[ii],把阈值设为最大值的90%，用循环遍历信号找出范围内大于阈值的点，绘图
 ![image](http://github.com/guangyubin/SmartHealth/2018/students/S201815034/images/标记出R波.png)
-
-
+<br>
+<br>
+作业中的错误：<br>
+1.为实现（4.）创建的函数QRSfunction.m存在参数调用错误无法使用<br>
+2.使用legend函数错误，心率没有显示
