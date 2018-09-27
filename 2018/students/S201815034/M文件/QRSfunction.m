@@ -1,6 +1,5 @@
-%UNTITLED �˴���ʾ�йش˺�����ժҪ
-%   �˴���ʾ��ϸ˵��
-%ѡ��ǰ10s�����ֵ�����Ƴ���ʼ��ֵ
+%UNTITLED 此处显示有关此函数的摘要
+%   此处显示详细说明
 function sig1=QRSfunction(sig1)
  thr = [];
  fs=250;
@@ -17,7 +16,7 @@ qrs = [];
 while (ii < length(sig1))
     switch(flag)
         case 0
-            if sig1(ii) > thr0   %Ѱ�Ҵ�����ֵ�ĵ�
+            if sig1(ii) > thr0   %寻找大于阈值的点
                 if sig1(ii) <= sig1(ii-1)
                     flag = 1;
                     qrs(m) = ii-1;
@@ -26,11 +25,12 @@ while (ii < length(sig1))
             end
             %break;          
         case 1
-            if sig1(ii) < thr0;  % Ѱ��С����ֵ�ĵ�
+            if sig1(ii) < thr0;  % 寻找小于阈值的点
                 flag = 0;                
             end
             %break;
     end
     ii = ii + 1;
 end
+sig1=sig1(qrs);
 end
