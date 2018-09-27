@@ -30,4 +30,14 @@ close all     %关闭所有窗口<br>
  ## 2.标记心电数据中的R波：
  ### 2.1函数规范
   代码简洁有利于提高工作效率，需要将matlab中代码所需用到的自定义功能存储为函数。<br>
- ### 2.2 
+  函数里注明对函数的描述，输入，输出，作者以及修改历史
+ ### 2.1.1
+ %%function [Fx,fbin] = ecg_psd(sig,fs,lwnd,loop)<br>
+ %%for ii =1:loop<br>
+   %%x = sig((ii-1) * lwnd * fs+1:ii * lwnd* fs);<br>
+   %%x = x - mean(x);<br>
+   %%Fx(ii,:) = abs(fff(x));<br>
+ %%end<br>
+ %%Fx = mean(Fx,1);<br>
+ %%fbin = 0:1/lwnd:fs-1/lwnd;<br>
+ 
