@@ -1,48 +1,4 @@
 function [k,v]=findpeaks(x,m,w)
-%FINDPEAKS finds peaks with optional quadratic interpolation [K,V]=(X,M,W)
-%
-%  Inputs:  X        is the input signal (does not work with UInt datatype)
-%           M        is mode:
-%                       'q' performs quadratic interpolation
-%                       'v' finds valleys instead of peaks
-%           W        is the width tolerance; a peak will be eliminated if there is
-%                    a higher peak within +-W samples
-%
-% Outputs:  K        are the peak locations in X (fractional if M='q')
-%           V        are the peak amplitudes: if M='q' the amplitudes will be interpolated
-%                    whereas if M~='q' then V=X(K). 
-
-% Outputs are column vectors regardless of whether X is row or column.
-% If there is a plateau rather than a sharp peak, the routine will place the
-% peak in the centre of the plateau. When the W input argument is specified,
-% the routine will eliminate the lower of any pair of peaks whose separation
-% is <=W; if the peaks have exactly the same height, the second one will be eliminated.
-% All peak locations satisfy 1<K<length(X).
-%
-% If no output arguments are specified, the results will be plotted.
-%
-
-%	   Copyright (C) Mike Brookes 2005
-%      Version: $Id: findpeaks.m,v 1.5 2010/10/28 10:41:16 dmb Exp $
-%
-%   VOICEBOX is a MATLAB toolbox for speech processing.
-%   Home page: http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/voicebox.html
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%   This program is free software; you can redistribute it and/or modify
-%   it under the terms of the GNU General Public License as published by
-%   the Free Software Foundation; either version 2 of the License, or
-%   (at your option) any later version.
-%
-%   This program is distributed in the hope that it will be useful,
-%   but WITHOUT ANY WARRANTY; without even the implied warranty of
-%   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-%   GNU General Public License for more details.
-%
-%   You can obtain a copy of the GNU General Public License from
-%   http://www.gnu.org/copyleft/gpl.html or by writing to
-%   Free Software Foundation, Inc.,675 Mass Ave, Cambridge, MA 02139, USA.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 if nargin<2
     m=' ';
