@@ -3,7 +3,7 @@
 ---
 ## 一.运用巴特沃斯滤波器过滤心电信号
 ### 1.滤波器
-#### 1.目标
+#### （1）.目标
 运用滤波器对原始心电信号进行初步处理，滤掉杂波，使心电信号更容易辨认。
 
 ### 2.代码
@@ -34,7 +34,7 @@
  figure;plot(fbin,mean(Fx,1))
 ```
 ### 2.图像
-#### 1.
+#### （1）.
 ![通过0.5HZ低通滤波器的信号](https://github.com/guangyubin/SmartHealth/blob/master/2018/students/S201815706/image/untitled1.jpg)
-#### 2.
+#### （2）.
 ![频域响应](https://github.com/guangyubin/SmartHealth/blob/master/2018/students/S201815706/image/untitled2.jpg)
