@@ -21,6 +21,18 @@
 ### 二、QRS波中R点的检测
 检测代码如下：
 
+	thr = [];
+	for j = 1:10
+	    x = ECG_filter(((j-1)*fs+1): (j*fs));
+	    thr(j) =  max(x);
+	end
+	thr0 = min(thr)*0.8;   %取阈值
+	flag = 0 ;
+	i = 1;
+	m = 1;
+	RR_count = 0;
+	qrs = [];
+	hrate = [];
 	while (i < length(ECG_filter))
 		switch(flag)
 			case 0
