@@ -7,9 +7,6 @@
 % out:
 %    Fx
 %    fbin
-% author:xiaoxiao
-% history:creat in 2018.9.21
-%         add ecg_psd function in 2018
 function [Fx,fbin]=ecg_psd(sig,fs,lwnd,loop)
 
 for ii=1:loop
