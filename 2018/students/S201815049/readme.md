@@ -2,11 +2,11 @@
 =
    1.心电信号滤波  
      本实验使用数据“1520309088000.dat”  
-   1.1本实验选择的截止频率为0.5Hz，设计巴特沃斯滤波器，得到滤波前后的信号频谱图。 
+   1.1本实验选择的截止频率为0.5Hz，设计巴特沃斯滤波器，得到滤波前后的信号频谱图(ecg_flite01r.m)。 
    
 ![01ecg_sign](https://github.com/guangyubin/SmartHealth/blob/master/2018/students/S201815049/figure/01ecg_sign.png)           
    
-   1.2在ecg_psd.m文件中将滤波前后的信号及其功率谱图画出来，计算功率谱时调用函数来自ecg_function_psd.m文件。    
+   1.2在ecg_psd02.m文件中将滤波前后的信号及其功率谱图画出来，计算功率谱时调用函数来自ecg_function_psd02.m文件。    
   
 ![02ecg_psd](https://github.com/guangyubin/SmartHealth/blob/master/2018/students/S201815049/figure/02ecg_psd.png)  
    
@@ -17,7 +17,8 @@
       
 ![03ecg_R_detect](https://github.com/guangyubin/SmartHealth/blob/master/2018/students/S201815049/figure/03ecg_R_detect.png)    
 
-   2.2 R点标记     
+   2.2 R点标记    
+   (ecg-R-detect03.m)
    
-   ![04ecg_R_detect](https://github.com/guangyubin/SmartHealth/blob/master/2018/students/S201815049/figure/04ecg_R_detect.png)   
+![04ecg_R_detect](https://github.com/guangyubin/SmartHealth/blob/master/2018/students/S201815049/figure/04ecg_R_detect.png)   
    
