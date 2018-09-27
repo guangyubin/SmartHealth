@@ -23,4 +23,6 @@ ________
 4.在信号图像上标记出R波
 ________
 找出前10S内心电信号的最大值thr[ii],把阈值设为最大值的90%，用循环遍历信号找出范围内大于阈值的点，绘图
-![image](http://github.com/guangyubin/
+![image](http://github.com/guangyubin/SmartHealth/2018/students/S201815034/images/标记出R波.png)
+
+
