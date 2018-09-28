@@ -42,3 +42,35 @@
 ### 2.绘出信号滤波前后的功率谱
 
 写一个函数ecg_psd,输入为时域信号，采样频率，加窗长度，循环次数,输出为对数功率FX和频率范围fbin,直接调用psd函数进行绘制.
+
+
+
+
+
+
+#include "QrsDectect.h"
+
+float qrsfilter(float x)
+{
+	return 0;
+}
+
+float bpfilter(float x)
+{
+
+	return 0;
+}
+float diff(float x)
+{
+	return 0;
+}
+//online QRSdetector using t;
+//intput : a sample ecg data;
+//out;
+//     out=0 :there is no qrs;
+//     out=1: there is a qrs;
+
+int QRSDetect(float x);
+
+
+#endif
