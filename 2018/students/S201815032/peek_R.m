@@ -3,46 +3,15 @@ clear;
 fid = fopen('100.dat','rb');
 sig = fread(fid,inf,'short');
 fclose(fid);
-fs = 250;  %²ÉÑùÂÊ250hz
-[b,a] = butter(2,[8 20]/(fs/2)); %8-20Hz´øÍ¨ÂË²¨
-y1 = filter(b,a,sig);
-y1 = diff(y1); %²î·ÖÔËËã
-y2 = abs(y1);  %È¡¾ø¶ÔÖµ
-y3 = filter(ones(1,5)/5,1,y2);  %Æ½»¬ÂË²¨
-
-for ii = 1:10        %È¡10ÃëÊı¾İ
-    x = y1(((ii-1)*fs+1):(ii*fs));   
-    thr(ii) = max(x);   
-   
-end
-a=0.05*(sum(y1)-max(y1)-min(y1));
-thr0 = min(thr)*a;   %ãĞÖµ  
-
-flag = 0 ;
-ii = 1;  
-m = 1;   
-qrs = [];
-	
-while (ii < length(y1))
-    switch(flag)
-        case 0
-            if y1(ii) > thr0  
-                if y1(ii) <= y1(ii-1)  
-                    flag = 1;
-                    qrs(m) = ii-1;
-                    m = m+1;
-                end
-            end
-        case 1
-            if y1(ii) < thr0
-                flag = 0;
-            end
-    end
-    ii = ii+1;
-end
-N = length(y1);
-figure;plot(y1);xlim([1000 5000]);xlabel('f(hz)');ylabel('·ùÖµ(mV)');
+L = length(sig);
+Fs = 250; %é‡‡æ ·é¢‘ç‡
+Ts = 1/Fs; %é‡‡æ ·å‘¨æœŸ
+[b,a] = butter(2,[8 20]/(Fs/2)); %8-20Hzå¸¦é€šæ»¤æ³¢
+x = filter(b,a,sig);
+x1 = diff(x); %å·®åˆ†è¿ç®—
+RIndex = RPeekDetect( x, Ts ); 
+figure;plot(x);xlabel('ç‚¹æ•°');ylabel('å¹…å€¼(mV)');
 hold on;
-plot(qrs,y1(qrs),'*r');
-%------------------ĞÄÂÊ¼ÆËã--------------------%
-hrate = length(y1(qrs))*fs*60/N;
+plot(RIndex,x(RIndex),'*r');
+xlim([1500 5000]);
+hrate = length(x(RIndex))*Fs*60/L; %è®¡ç®—å¿ƒç‡
