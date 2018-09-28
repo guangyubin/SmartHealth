@@ -65,7 +65,7 @@ figure;plot(fbin1,Fx1) ;xlabel('f(Hz)');ylabel('dB/Hz');hold on;plot(fbin2,Fx2);
   
 ## 3.标记R波
 ### 3.1
-fid = fopen('../../mat1/data/1520309088000.dat','rb');<br>
+fid = fopen('../../1520309088000.dat','rb');<br>
 sig_test = fread(fid,inf,'short');<br>
 fclose(fid);<br>
 
