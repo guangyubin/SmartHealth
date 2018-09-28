@@ -58,7 +58,7 @@ figure;<br>
 plot(fbin1,Fx1);<br>
 hold on;<br>
 xlabel('f(Hz)');<br>
-ylabel('db/Hz');<br>
+ylabel('psd(db)');<br>
 plot(fbin2,Fx2);<br>
 figure;plot(fbin1,Fx1) ;xlabel('f(Hz)');ylabel('dB/Hz');hold on;plot(fbin2,Fx2);<br>
 ![image](https://github.com/guangyubin/SmartHealth/blob/master/2018/students/S201815048/signal%20figure/power%20spectrum.jpg)
