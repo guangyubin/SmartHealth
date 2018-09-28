@@ -5,7 +5,7 @@
 _______
 考虑到正常人的心跳都在30次/分-200次/分的范围内，频率范围在0.5hz-3.3hz,故设计滤波器的截止频率不应过高  <br>
 使用数据1520309088000.dat，设计巴特沃斯滤波器实现,设置截止频率为0.5HZ，得到各波段清晰的波形<br>
-![image](http://github.com/guangyubin/SmartHealth/2018/students/S201815034/images/心电信号滤波去漂移.png)
+![](http://github.com/guangyubin/SmartHealth/2018/students/S201815034/images/心电信号滤波去漂移.png)
 
 2.绘出信号滤波前后的功率谱
 _______
