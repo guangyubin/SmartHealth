@@ -95,38 +95,42 @@ y1 = filter(b,a,sig);<br>
 y1 = diff(y1); %差分运算<br>
 y2 = abs(y1);  %取绝对值<br>
 y3 = filter(ones(1,5)/5,1,y2);  %平滑滤波<br>
-for ii = 1:10<br>
-    x = y1(((ii-1)*fs+1):(ii*fs));<br>
-    thr(ii) = max(x);<br>
+for ii = 1:10        %取10秒数据<br>
+    x = y1(((ii-1)*fs+1):(ii*fs));   %以步长为1统计信号y1各点的值<br>
+    thr(ii) = max(x);   %找出前10秒数据中的极大值<br>
    
 end<br>
-thr0 = min(thr)*0.9;<br>
+thr0 = min(thr)*0.9;   %取前十秒数据中各极大值的最小值  <br>
 
 flag = 0 ;<br>
-ii = 1;<br>
-m = 1;<br>
+ii = 1;  %ii初始为1,代表抽样点<br>
+m = 1;   <br>
 qrs = [];<br>
 	
-while (ii < length(y1))<br>
+while (ii < length(y1)) %判断ii长度是否在原信号带宽内<br>
     switch(flag)<br>
         case 0<br>
-            if y1(ii) > thr0<br>
-                if y1(ii) <= y1(ii-1)<br>
+            if y1(ii) > thr0  %判断ii点时y1幅值是否>thr0<br>
+                if y1(ii) <= y1(ii-1)  <br>
                     flag = 1;<br>
-                    qrs(m) = ii-1;<br>
+                    qrs(m) = ii-1; %记录峰值点<br>
                     m = m+1;<br>
                 end<br>
             end<br>
-        case 1
+        case 1<br>
             if y1(ii) < thr0<br>
                 flag = 0;<br>
             end<br>
     end<br>
     ii = ii+1;<br>
 end<br>
-
-figure;plot(y1);xlim([1000 5000]);hold on;plot(qrs,y1(qrs),'*r');<br>
-
+N = length(y1);  %计算信号长度<br>
+% time = (0:N-1)/fs;<br>
+% t = qrs/fs;<br>
+%------------------绘图--------------------%<br>
+figure;plot(y1);xlim([1000 5000]);xlabel('f(hz)');ylabel('幅值');<br>
+hold on;<br>
+plot(qrs,y1(qrs),'*r');<br>
 %------------------心率计算--------------------%<br>
 hrate = length(y1(qrs))*fs*60/N<br>
 
