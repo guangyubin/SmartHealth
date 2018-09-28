@@ -47,7 +47,7 @@
 
 
 
-
+QrsDectet.cpp
 #include "QrsDectect.h"
 
 float qrsfilter(float x)
@@ -74,3 +74,52 @@ int QRSDetect(float x);
 
 
 #endif
+
+
+
+QrsDetect.h
+#ifndef __QRS_DETECT_H__
+#define __QRS_DETECT_H__
+
+float qrsfilter(float x);
+
+float bpfilter(float x);
+float diff(float x);
+float smooth(float x);
+
+//online QRSdetector using t;
+//intput : a sample ecg data;
+//out;
+//     out=0 :there is no qrs;
+//     out=1: there is a qrs;
+
+int QRSDetect(float x);
+
+
+#endif
+
+
+main.cpp
+#include <stdio.h>
+#include "QrsDetect.h"
+void main()
+{
+      printf("helloworld\n");
+      FILE*fp=fopen("data//100.dat","rb");
+	  FILE*fp1=fopen("data//100_filt.dat","wb");
+	  short x;
+	  for(int i=0;i<1000;i++)
+	  {
+		  fread(&x,sizeof(short),1,fp);
+		  short y=2*x;
+		  fwrite(&y,sizeof(short),1,fp1);
+		  printf("%d",x);
+		  int res=QRSDetect(x);
+		  if(res==1)
+		  printf("there is a qrs in %d samples ",i);
+	  }
+	  fclose(fp);
+	  fclose(fp1);
+
+} 
+
