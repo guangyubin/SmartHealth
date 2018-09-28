@@ -40,4 +40,12 @@ close all     %关闭所有窗口<br>
  %%end<br>
  %%Fx = mean(Fx,1);<br>
  %%fbin = 0:1/lwnd:fs-1/lwnd;<br>
- 
+ [Fx1,fbin1] = ecg_psd(sig,fs,10,100);<br>
+[Fx2,fbin2] = ecg_psd(sig2,fs,10,100);<br>
+%%画图<br>
+figure;<br>
+plot(fbin1,Fx1);<br>
+hold on;<br>
+xlabel('f(Hz)');
+ylabel('db/Hz');
+plot(fbin2,Fx2);
