@@ -21,7 +21,7 @@ y3 = filter(ones(1,5)/5,1,y2);  %平滑滤波
 % subplot(414);plot(t,y3);title('平滑后的信号');xlim([100 110]);xlabel('time(s)');ylabel('幅值');
 % 
 for ii = 1:10        %取10秒数据
-    x = y1(((ii-1)*fs+1):(ii*fs));   
+    x = y1(((ii-1)*fs+1):(ii*fs));   %以步长为1统计信号y1各点的值
     thr(ii) = max(x);   %找出前10秒数据中的极大值
    
 end
@@ -38,7 +38,7 @@ while (ii < length(y1)) %判断ii长度是否在原信号带宽内
             if y1(ii) > thr0  %判断ii点时y1幅值是否>thr0
                 if y1(ii) <= y1(ii-1)  
                     flag = 1;
-                    qrs(m) = ii-1;
+                    qrs(m) = ii-1; %记录峰值点
                     m = m+1;
                 end
             end
@@ -49,9 +49,10 @@ while (ii < length(y1)) %判断ii长度是否在原信号带宽内
     end
     ii = ii+1;
 end
-N = length(y1);
+N = length(y1);  %计算信号长度
 % time = (0:N-1)/fs;
 % t = qrs/fs;
+%------------------绘图--------------------%
 figure;plot(y1);xlim([1000 5000]);xlabel('f(hz)');ylabel('幅值');
 hold on;
 plot(qrs,y1(qrs),'*r');
