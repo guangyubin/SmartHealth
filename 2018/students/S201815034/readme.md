@@ -13,17 +13,17 @@ _______
 输入为时域信号，采样频率，加窗长度，循环次数<br>
 输出为对数功率FX和频率范围fbin<br>
 直接调用psd函数进行绘制<br>
-![image](http://github.com/guangyubin/SmartHealth/2018/students/S201815034/images/滤波前后的信号功率谱.png)
+![滤波前后的信号功率谱.png](http://github.com/guangyubin/SmartHealth/2018/students/S201815034/images/滤波前后的信号功率谱.png)
 
 3.对信号进行滤波，取绝对值，标记R波
 ________
 设计巴特沃斯2阶带通滤波器，通带频率8-20HZ,之后再对信号做平滑，取绝对值<br>
-![image](http://github.com/guangyubin/SmartHealth/2018/students/S201815034/images/信号带通滤波取绝对值.png)
+![信号带通滤波取绝对值.png](http://github.com/guangyubin/SmartHealth/2018/students/S201815034/images/信号带通滤波取绝对值.png)
 
 4.在信号图像上标记出R波
 ________
 找出前10S内心电信号的最大值thr[ii],把阈值设为最大值的90%，用循环遍历信号找出范围内大于阈值的点，绘图<br>
-![image](http://github.com/guangyubin/SmartHealth/2018/students/S201815034/images/标记出R波.png)
+![标记出R波.png](http://github.com/guangyubin/SmartHealth/2018/students/S201815034/images/标记出R波.png)
 <br>
 <br>
 
