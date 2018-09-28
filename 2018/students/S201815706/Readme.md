@@ -6,7 +6,7 @@
 #### （1）.目标
 运用滤波器对原始心电信号进行初步处理，滤掉杂波，使心电信号更容易辨认。
 
-### 2.代码
+#### (2).代码
 ```
  fid = fopen('1520309088000.dat','r');
  d = fread(fid,Inf,'short');
@@ -33,8 +33,12 @@
  fbin=0:1/10:fs-1/(10);
  figure;plot(fbin,mean(Fx,1))
 ```
-### 2.图像
-#### （1）.
+#### (2).图像
+##### 1.
 ![通过0.5HZ低通滤波器的信号](https://github.com/guangyubin/SmartHealth/blob/master/2018/students/S201815706/image/untitled1.jpg)
-#### （2）.
+##### 2.
 ![频域响应](https://github.com/guangyubin/SmartHealth/blob/master/2018/students/S201815706/image/untitled2.jpg)
+
+### 2.绘出信号滤波前后的功率谱
+
+写一个函数ecg_psd,输入为时域信号，采样频率，加窗长度，循环次数,输出为对数功率FX和频率范围fbin,直接调用psd函数进行绘制.
