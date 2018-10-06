@@ -26,6 +26,6 @@ ________
 ![标记出R波.png](http://github.com/guangyubin/SmartHealth/2018/students/S201815034/images/标记出R波.png)
 <br>
 <br>
-
-1.创建的函数QRSfunction.m调用错误,还需调试<br>
-2.使用legend函数计算心率未实现，正调试
+4(1).标记R波做法2
+________
+使用100.dat数据，用detrend函数去除基线漂移，滤波截至频率设为30（测试值，滤波波形较好），取前5000点做标记，所得的rvalue变量值即为R波所在位置
