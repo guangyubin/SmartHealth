@@ -64,7 +64,7 @@ figure;plot(fbin1,Fx1) ;xlabel('f(Hz)');ylabel('dB/Hz');hold on;plot(fbin2,Fx2);
 ![image](https://github.com/guangyubin/SmartHealth/blob/master/2018/students/S201815048/signal%20figure/power%20spectrum.jpg)
   
 ## 3.标记R波
-### 3.1
+### 3.1分别画出带通，差分，取绝对值，平滑滤波之后的图像
 fid = fopen('../../1520309088000.dat','rb');<br>
 sig_test = fread(fid,inf,'short');<br>
 fclose(fid);<br>
@@ -83,3 +83,57 @@ subplot(412);plot(y1(tshow));title('通过差分放大器后的信号');xlabel('
 subplot(413);plot(y2(tshow));title('取绝对值后的信号');xlabel('f(Hz)');ylabel('幅值');<br>
 subplot(414);plot(y3(tshow));title('平滑滤波处理的信号');xlabel('f(Hz)');ylabel('幅值');<br>
 ![image](https://github.com/guangyubin/SmartHealth/blob/master/2018/students/S201815048/signal%20figure/four%20figure%20of%20the%20test.jpg)
+clc;clear;
+fid = fopen('F:/作业/data/100.dat','rb');
+sig = fread(fid,inf,'short');
+fclose(fid);
+
+
+### 3.2寻找阈值，标记R波
+fs = 250; %采样率250hz<br>
+N = length(sig);<br>
+time = (0:N-1)/fs;<br>
+N = length(sig);<br>
+t=1/fs:1/fs:(N-1)/fs;%从1/fs开始，步长为1/fs，终值为(N-1)/fs<br>
+[b,a] = butter(2,[8 20]/(fs/2)); %带通滤波器，截止频率8hz~20hz<br>
+y1 = filter(b,a,sig);%经过带通滤波器<br>
+y1 = diff(y1); %差分运算<br>
+y2 = abs(y1); %取绝对值<br>
+y3 = filter(ones(1,5)/5,1,y2); %平滑滤波<br>
+for ii = 1:10 %取10秒数据<br>
+x = y1(((ii-1)*fs+1):(ii*fs)); %以步长为1统计信号y1各点的值：取值为1到fs<br>
+thr(ii) = max(x); %找出前10秒数据中的极大值<br>
+end<br>
+
+thr0 = min(thr)*0.9; %取前十秒数据中各极大值的最小值 <br>
+
+flag = 0 ;<br>
+ii = 1; %ii初始为1,代表抽样点<br>
+m = 1; <br>
+qrs = [];<br>
+
+while (ii < length(y1)) %判断ii长度是否在原信号带宽内<br>
+switch(flag)<br>
+case 0<br>
+if y1(ii) > thr0 %判断ii点时y1幅值是否>thr0<br>
+if y1(ii) <= y1(ii-1) %<br>
+flag = 1;<br>
+qrs(m) = ii-1; %记录峰值点<br>
+m = m+1;<br>
+end<br>
+end<br>
+case 1<br>
+if y1(ii) < thr0<br>
+flag = 0;<br>
+end<br>
+end<br>
+ii = ii+1;<br>
+end<br>
+N = length(y1); %计算信号长度<br>
+% time = (0:N-1)/fs;<br>
+% t = qrs/fs;<br>
+%------------------绘图--------------------%
+figure;plot(y1);xlim([1000 5000]);xlabel('f(hz)');ylabel('幅值');<br>
+hold on;<br>
+plot(qrs,y1(qrs),'*r');<br>
+![image](https://github.com/guangyubin/SmartHealth/blob/master/2018/students/S201815048/signal%20figure/detect%20R%20wave.jpg)
