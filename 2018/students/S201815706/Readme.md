@@ -8,8 +8,8 @@
 
 #### (2).代码
 ```
- fid = fopen('1520309088000.dat','r');
- d = fread(fid,Inf,'short');
+ fid = fopen('1520309088000.dat','r');%打开文件
+ d = fread(fid,Inf,'short');%读取文件
  fclose(fid);
  fmaxd = 0.5;%截止频率为0.5Hz
  fs = 250;%采样率250
@@ -35,8 +35,8 @@
 
 #### （1）代码
 ```
- fid = fopen('1520309088000.dat','r');
- d = fread(fid,Inf,'short');
+ fid = fopen('1520309088000.dat','r');%打开文件
+ d = fread(fid,Inf,'short');%读取文件
  fclose(fid);
  fmaxd = 5;%截止频率为5Hz
  fs = 250;%采样率250
@@ -74,10 +74,10 @@
  sig = fread(fid,inf,'short');  %读取文件
  fclose(fid);  
  L=length(sig);  
- fs=250;  
+ fs=250;  %频率为250HZ
  t=1/fs:1/fs:(L-1)/fs;
  time = (0:L-1)/fs;
- [b,a]= butter(2,[8 20]/(fs/2));
+ [b,a]= butter(2,[8 20]/(fs/2));%通过巴特沃斯滤波器
  sig1=filter(b,a,sig);
  sig1=diff(sig1); 
  sig2=abs(sig1); 
