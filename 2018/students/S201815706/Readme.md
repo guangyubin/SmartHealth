@@ -70,8 +70,8 @@
 ```
  clc;
  clear;
- fid = fopen('../../100.dat','rb');
- sig = fread(fid,inf,'short');  
+ fid = fopen('100.dat','rb');%打开文件
+ sig = fread(fid,inf,'short');  %读取文件
  fclose(fid);  
  L=length(sig);  
  fs=250;  
@@ -97,6 +97,40 @@
 #### （2）找出R波个数
    通过设定阈值，记录R波个数。
    
+   ``` 
+thr = [];
+for ii = 1:10
+    x = sig1(((ii-1)*fs+1): (ii*fs));
+    thr(ii) =  max(x);
+end
+thr0 = min(thr)*0.9;
+flag = 0 ;
+ii = 1;
+m = 1;
+qrs = [];
+
+while (ii < length(sig1))
+    switch(flag)
+        case 0
+            if sig1(ii) > thr0   %寻找大于阈值的点
+                if sig1(ii) <= sig1(ii-1)
+                    flag = 1;
+                    qrs(m) = ii-1;
+                    m = m+1;
+                end
+            end
+            %break;          
+        case 1
+            if sig1(ii) < thr0;  % 寻找小于阈值的点
+                flag = 0;                
+            end
+            %break;
+    end
+    ii = ii + 1;
+end
+figure(4);plot(sig1);xlim([1000 5000]);hold on,plot(qrs,sig1(qrs),'*r');
+```
+##### 2）、图像
    
    
    
