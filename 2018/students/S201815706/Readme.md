@@ -74,7 +74,7 @@
  sig = fread(fid,inf,'short');  %读取文件
  fclose(fid);  
  L=length(sig);  
- fs=250;  %频率为250HZ
+ fs=250;  %采样率为250HZ
  t=1/fs:1/fs:(L-1)/fs;
  time = (0:L-1)/fs;
  [b,a]= butter(2,[8 20]/(fs/2));%通过巴特沃斯滤波器
