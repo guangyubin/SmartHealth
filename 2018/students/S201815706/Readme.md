@@ -91,7 +91,7 @@
 ```
 ##### 1）、图像
 
-
+![](https://github.com/guangyubin/SmartHealth/blob/master/2018/students/S201815706/image/R.jpg)
 
 
 #### （2）找出R波个数
@@ -132,7 +132,7 @@ figure(4);plot(sig1);xlim([1000 5000]);hold on,plot(qrs,sig1(qrs),'*r');
 ```
 ##### 2）、图像
    
-   
+![](https://github.com/guangyubin/SmartHealth/blob/master/2018/students/S201815706/image/FIND%20R.jpg)   
    
    
 ## 二、运用C语言实现对心电信号的处理   
