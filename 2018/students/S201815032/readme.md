@@ -200,6 +200,7 @@ void main()
     fclose(fp1);
 }
 ```
+### 2.带通滤波器
 ```
 #include"qrs.h"
 
@@ -276,6 +277,7 @@ float smooth(float x);
 int QRSDetect(float x);  
 #endif
 ```
+### 3.峰值点
 ```
 #include "qrs.h"
 
