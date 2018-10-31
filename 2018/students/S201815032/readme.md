@@ -1,12 +1,12 @@
 # 智能医学仪器设计
 
-## 基于MATLAB的心电数据处理
+## 一、基于MATLAB的心电数据处理
 
-### 1、心电信号的特点
+### 1.心电信号的特点
 
 人体心电信号是非常微弱的生理低频电信号，通常最大的幅值不超5mV，信号频率在0.01～35Hz之间。心电信号具有微弱、低频、高阻抗等特性，极容易受到干扰，所以分析干扰的来源，针对不同干扰采取相应的滤除措施，是数据采集重点考虑的一个问题。
 
-### 2、滤波器的选择
+### 2.滤波器的选择
 
 根据心电信号（ecg)功率谱图可知，信号频率在0.01～35Hz之间，另外，正常人的心率是60-100次/min，两次心拍的最短时间为1s,所以选择的截止频率不大于1Hz,本实验选择的截止频率为0.5Hz,得到滤波前后的信号频谱图。
 ```clc;
@@ -48,7 +48,7 @@ fbin=0:1/lwnd:fs-1/lwnd;
 
 在ecg_hp.m文件中将滤波前后的信号及其功率谱图画出来，计算功率谱时调用函数来自ecg_psd.m文件。
 
-### 3：对R,S波计数，计算心率
+### 3.对R,S波计数，计算心率
 
 用matlab自带的findpeaks函数，该函数是寻找极大值，同时可以限定条件，比如峰值阈值，极大值间隔等等。峰值阈值的设定是根据滤波后的ecg信号图设定的，也可以设为峰值的70%；极大值间隔是用最短间隔时间0.5S*fs得到。通过对峰值标记（检测R波）后计数，除以有效数据的时间长度，即为心率。结果显示该ecg的心率在75-76次/min。（qrs_detect.m）
 ```
@@ -93,7 +93,7 @@ hrate2=length(minv_sig)*fs*60/L;  %对S波进行计数得到的心率，单位�
 ![ecg_abs](https://github.com/guangyubin/SmartHealth/blob/master/2018/students/S201815032/MATLAB%20Figure/ecg_abs.jpg)
 ![ecg_detect_RS](https://github.com/guangyubin/SmartHealth/blob/master/2018/students/S201815032/MATLAB%20Figure/ecg_detect_RS.jpg)
 
-### 4：差分阈值法检测R波
+### 4.差分阈值法检测R波
 
 幅值的最小阈值设定方法是去掉最大值和最小值之后去平均值，相邻R-R波之间的时间最小阈值是通过获得前6个R峰，计算个数与长度的比。前6个R峰的获得是在点数范围内，当后一个点幅值的绝对值大于前一个幅值点的幅值时，标定。(peek_R.m+RPeekDetect.m)
 ```
@@ -175,3 +175,6 @@ plot(qrs,y1(qrs),'*r');
 hrate = length(y1(qrs))*fs*60/N
 ```
 ![Peek_R](https://github.com/guangyubin/SmartHealth/blob/master/2018/students/S201815032/MATLAB%20Figure/Peek_R.jpg)
+![ecg_qrs_detect](https://github.com/guangyubin/SmartHealth/blob/master/2018/students/S201815032/MATLAB%20Figure/ecg_qrs_detect.jpg)
+
+## 二、基于C++的心电数据处理
