@@ -175,3 +175,191 @@ hrate = length(y1(qrs))*fs*60/N
 <div align=center><img width="600" height="450" src="https://github.com/guangyubin/SmartHealth/blob/master/2018/students/S201815032/MATLAB%20Figure/ecg_qrs_detect.jpg"/></div>
 
 ## 二、基于C++的心电数据处理
+### 1.主函数
+```
+#include<stdio.h>
+#include"qrs.h"
+void main()
+{
+
+	printf("helloworld/n");
+	FILE *fp=fopen("C:data//100.dat","rb");
+		FILE *fp1=fopen("data//100_filt.dat","wb");
+	short x;
+	for(int i=0;i<1000;i++)
+	{
+		fread(&x,sizeof(short),1,fp);
+		short y=2*x;
+        fwrite(&y,sizeof(short),1,fp1);
+	    printf("%d " , x);
+		int res = QRSDetect(x);
+			if(res ==1)
+				printf("there is a qrs in %d samples");
+	}
+    fclose(fp);
+    fclose(fp1);
+}
+```
+```
+#include"qrs.h"
+
+float qrsfilter(float x)
+{
+	return 0;
+}
+
+        static const float Ceof_A[5]={1,-3.39756791945667,4.49126771653074,-2.73830049324164,0.652837763457545};
+        static const float Ceof_B[5]={0.0186503962278372,0,-0.0373007924556744,0,0.0186503962278372};
+float bpfilter(f#include<stdio.h>
+#include"qrs.h"
+void main()
+{
+
+	printf("helloworld/n");
+	FILE *fp=fopen("C:data//100.dat","rb");
+		FILE *fp1=fopen("data//100_filt.dat","wb");
+	short x;
+	for(int i=0;i<1000;i++)
+	{
+		fread(&x,sizeof(short),1,fp);
+		short y=2*x;
+        fwrite(&y,sizeof(short),1,fp1);
+	    printf("%d " , x);
+		int res = QRSDetect(x);
+			if(res ==1)
+				printf("there is a qrs in %d samples");
+	}
+    fclose(fp);
+    fclose(fp1);
+}loat xn)
+{
+
+	    float yn4,yn3,yn2,yn1=0;
+	    float xn4,xn3,xn2,xn1=0;
+		float yn = xn*Ceof_B[0] + xn1*Ceof_B[1] + xn2 *Ceof_B[2] + xn3*Ceof_B[3] + xn4 * Ceof_B[4] - yn1 * Ceof_A[1] - yn2 * Ceof_A[2]  - yn3 * Ceof_A[3]  - yn4 * Ceof_A[4] ;
+		static float buf_x[5];
+	    static float buf_y[5];
+		static int curpos=0;
+
+	    float tmpxn=0;
+
+		yn4=yn3;
+		yn3=yn2;
+        yn2=yn1;
+		yn1=yn;
+		xn4=xn3;
+		xn3=xn2;
+        xn2=xn1;
+		xn1=xn;
+		return yn;
+}
+float diff(float x)
+{
+	return 0;
+}
+float smooth(float x)
+{
+	return 0;
+}
+int QRSDetect(float x)
+{
+	return 0;
+}
+```
+```
+#ifndef _QRS_DETECT_H_
+#define _QRS_DETECT_H_float 
+float qrsfilter(float x);
+float bpfilter(float x);
+float diff(float x);
+float smooth(float x);
+int QRSDetect(float x);  
+#endif
+```
+```
+#include "qrs.h"
+
+const int DEFALTE_SLOW = 1;
+const int DEFALTE_FAST = 2;
+const int FIND_BEAT = 3;
+static int gflag = { 0 };
+int flag = { 0 };
+double gsbn1 = { 0 };
+int peak_locs[100];
+int val_locs[100];
+double peak_amp[100];
+double val_amp[100];
+int num = 0;
+int nibp_pushdata(double x)
+{
+	switch (gflag)
+	{
+	case 0:
+		if (x > 5 && x < gsbn1)
+		{
+			gflag = DEFALTE_SLOW;
+			flag = 1; //peakfind跳出default
+			return DEFALTE_SLOW;
+		}
+		else
+			gsbn1 = x;
+			return 0;
+		break;
+		default:
+			return 0;
+		break;
+	}	
+}
+void nibp_peakfind(double bs)
+{
+	double thr = 0.5;
+	static int max_loc = 0, min_loc = 0;
+	static double max = 0, min = 100;
+	switch (flag)
+	{
+	case 1://上升沿
+		if (gsbn1<thr && bs>thr)
+		{
+			flag = 2;
+			val_amp[num] = min;
+			val_locs[num] = min_loc;
+			min = 100;
+			num++;
+		}
+		if (bs - min<0)
+		{
+			min = bs;
+			min_loc = loc;
+		}
+		gsbn1 = bs;
+		break;
+	case 2://下降沿
+		if (gsbn1>thr && bs<thr)
+		{
+			flag = 1;
+			peak_amp[num] = max;
+			peak_locs[num] = max_loc;
+			max = 0;
+		}
+		if (bs - max>0)
+		{
+			max = bs;
+			max_loc = loc;
+		}		
+		gsbn1 = bs;
+		break;
+	default:
+		break;
+	}
+}
+int cal_rate()
+{
+	int total = 0;
+	for (int i = 2;i <= num;i++)
+	{
+		total = total + peak_locs[i] - peak_locs[i-1];
+	}
+	int rate = 60 * 120 / (total / (num-1));
+	return rate;
+}
+```
