@@ -171,7 +171,7 @@ plot(qrs,y1(qrs),'*r');
 %------------------心率计算--------------------%
 hrate = length(y1(qrs))*fs*60/N
 ```
-<div align=center><img width="600" height="450" src="github.com/guangyubin/SmartHealth/blob/master/2018/students/S201815032/MATLAB%20Figure/Peek_R.jpg"/></div>
+<div align=center><src="github.com/guangyubin/SmartHealth/blob/master/2018/students/S201815032/MATLAB%20Figure/Peek_R.jpg"/></div>
 <div align=center><img width="600" height="450" src="https://github.com/guangyubin/SmartHealth/blob/master/2018/students/S201815032/MATLAB%20Figure/ecg_qrs_detect.jpg"/></div>
 
 ## 二、基于C++的心电数据处理
