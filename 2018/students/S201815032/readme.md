@@ -10,7 +10,7 @@
 
 根据心电信号（ecg)功率谱图可知，信号频率在0.01～35Hz之间，另外，正常人的心率是60-100次/min，两次心拍的最短时间为1s,所以选择的截止频率不大于1Hz,本实验选择的截止频率为0.5Hz,得到滤波前后的信号频谱图。
 </code>
-  clc;
+        <clc;
 	clear;
 	fid = fopen('1520309088000.dat','rb'); %open file
 	sig = fread(fid,inf,'short');  %read file
@@ -30,7 +30,7 @@
 	[Fx1,fbin1]=ecg_psd(sig,fs,10,100); %psd of sig
 	[Fx2,fbin2]=ecg_psd(sig1,fs,10,100); %psd of sig1
 	figure(2);plot(fbin1,Fx1,'r');hold on;plot(fbin2,Fx2,'b');
-	legend('原始信号功率谱','滤波后的功率谱');xlabel('f(Hz)');ylabel('psd(db)');
+	legend('原始信号功率谱','滤波后的功率谱');xlabel('f(Hz)');ylabel('psd(db)');>
 </pre>
 ![ecg_raw&hp](https://github.com/guangyubin/SmartHealth/blob/master/2018/students/S201815032/MATLAB%20Figure/ecg_raw%26hp.jpg)
 ![ecg_psd](https://github.com/guangyubin/SmartHealth/blob/master/2018/students/S201815032/MATLAB%20Figure/ecg_psd.jpg)
