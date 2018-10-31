@@ -41,8 +41,8 @@ function [Fx,fbin]=ecg_psd(sig,fs,lwnd,loop)
 Fx=mean(Fx,1);
 fbin=0:1/lwnd:fs-1/lwnd;
 ```
-<div align=center><img width="500" height="700" src="https://github.com/guangyubin/SmartHealth/blob/master/2018/students/S201815032/MATLAB%20Figure/ecg_raw%26hp.jpg"/></div>
-<div align=center><img width="500" height="700" src="https://github.com/guangyubin/SmartHealth/blob/master/2018/students/S201815032/MATLAB%20Figure/ecg_psd.jpg"/></div>
+<div align=center><img width="600" height="450" src="https://github.com/guangyubin/SmartHealth/blob/master/2018/students/S201815032/MATLAB%20Figure/ecg_raw%26hp.jpg"/></div>
+<div align=center><img width="600" height="450" src="https://github.com/guangyubin/SmartHealth/blob/master/2018/students/S201815032/MATLAB%20Figure/ecg_psd.jpg"/></div>
 
 在ecg_hp.m文件中将滤波前后的信号及其功率谱图画出来，计算功率谱时调用函数来自ecg_psd.m文件。
 
@@ -87,8 +87,8 @@ legend('ECG波','R波','S波');
 hrate1=length(maxv_sig)*fs*60/L;  %对R波进行计数得到的心率，单位（次/min）
 hrate2=length(minv_sig)*fs*60/L;  %对S波进行计数得到的心率，单位（次/min）
 ```
-<div align=center><img width="500" height="700" src="https://github.com/guangyubin/SmartHealth/blob/master/2018/students/S201815032/MATLAB%20Figure/ecg_abs.jpg"/></div>
-<div align=center><img width="500" height="700" src="https://github.com/guangyubin/SmartHealth/blob/master/2018/students/S201815032/MATLAB%20Figure/ecg_detect_RS.jpg"/></div>
+<div align=center><img width="600" height="450" src="https://github.com/guangyubin/SmartHealth/blob/master/2018/students/S201815032/MATLAB%20Figure/ecg_abs.jpg"/></div>
+<div align=center><img width="600" height="450" src="https://github.com/guangyubin/SmartHealth/blob/master/2018/students/S201815032/MATLAB%20Figure/ecg_detect_RS.jpg"/></div>
 
 ### 4.差分阈值法检测R波
 
@@ -171,7 +171,7 @@ plot(qrs,y1(qrs),'*r');
 %------------------心率计算--------------------%
 hrate = length(y1(qrs))*fs*60/N
 ```
-<div align=center><img width="500" height="700" src="github.com/guangyubin/SmartHealth/blob/master/2018/students/S201815032/MATLAB%20Figure/Peek_R.jpg"/></div>
-<div align=center><img width="500" height="700" src="https://github.com/guangyubin/SmartHealth/blob/master/2018/students/S201815032/MATLAB%20Figure/ecg_qrs_detect.jpg"/></div>
+<div align=center><img width="600" height="450" src="github.com/guangyubin/SmartHealth/blob/master/2018/students/S201815032/MATLAB%20Figure/Peek_R.jpg"/></div>
+<div align=center><img width="600" height="450" src="https://github.com/guangyubin/SmartHealth/blob/master/2018/students/S201815032/MATLAB%20Figure/ecg_qrs_detect.jpg"/></div>
 
 ## 二、基于C++的心电数据处理
