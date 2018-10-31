@@ -41,8 +41,7 @@ function [Fx,fbin]=ecg_psd(sig,fs,lwnd,loop)
 Fx=mean(Fx,1);
 fbin=0:1/lwnd:fs-1/lwnd;
 ```
-
-![ecg_raw&hp](https://github.com/guangyubin/SmartHealth/blob/master/2018/students/S201815032/MATLAB%20Figure/ecg_raw%26hp.jpg)
+<div align=center><img width="150" height="150" src="https://github.com/guangyubin/SmartHealth/blob/master/2018/students/S201815032/MATLAB%20Figure/ecg_raw%26hp.jpg"/></div>
 ![ecg_psd](https://github.com/guangyubin/SmartHealth/blob/master/2018/students/S201815032/MATLAB%20Figure/ecg_psd.jpg)
 
 
