@@ -235,7 +235,7 @@ void main()
 //subplot(212); plot(d2); hold on; plot(qrs, d2(qrs), '.r');
 */
 ```
-### 2.带通滤波器
+### 2.带通滤波器、QRS标定
 ```
 #include "Qrsdetect.h"
 #include <math.h>//引入绝对值函数；
