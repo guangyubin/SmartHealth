@@ -178,190 +178,279 @@ hrate = length(y1(qrs))*fs*60/N
 ### 1.主函数
 ```
 #include<stdio.h>
-#include"qrs.h"
+#include"QrsDetect.h"
+
+
 void main()
 {
-
-	printf("helloworld/n");
-	FILE *fp=fopen("C:data//100.dat","rb");
-		FILE *fp1=fopen("data//100_filt.dat","wb");
+	printf("hello world!\n");
+	FILE *fp =  fopen("C:\\Users\\HP\\Desktop\\qrsdetecg\\data\\100.dat", "rb");
+	FILE *fp1 = fopen("C:\\Users\\HP\\Desktop\\qrsdetecg\\data\\100_filt.dat", "wb");
+	FILE *fp2 = fopen("C:\\Users\\HP\\Desktop\\qrsdetecg\\data\\100.txt", "w+");
 	short x;
-	for(int i=0;i<1000;i++)
+	int pos = 0;
+	int i; 
+
+ int total = 0;
+
+	while (fread(&x, sizeof(short), 1, fp))
 	{
-		fread(&x,sizeof(short),1,fp);
-		short y=2*x;
-        fwrite(&y,sizeof(short),1,fp1);
-	    printf("%d " , x);
-		int res = QRSDetect(x);
-			if(res ==1)
-				printf("there is a qrs in %d samples");
+
+
+		short y = smooth(diff(bpfilter(x)));
+		fwrite(&y, sizeof(short), 1, fp1);
+		//	printf("%d",x);
+		int res = QrsDectet(x);
+		if (res == 1)   
+		{
+			
+		     total = total ++;
+			fprintf(fp2,"%d \n" ,i );
+			printf("there is a qrs in samples  %d \n", i);
+		}
 	}
-    fclose(fp);
-    fclose(fp1);
+	printf("the total beats is   %d \n", total);
+	
+	fclose(fp);
+	fclose(fp1);
+	fclose(fp2);
+
 }
+
+// matlab code
+
+/*              
+//fid = fopen('C:\Users\guang\Desktop\SmartHealth\2018\data\100.dat', 'rb');
+//d = fread(fid, inf, 'short');
+//fclose(fid);
+//
+//fid = fopen('C:\Users\guang\Desktop\SmartHealth\2018\data\100_filt.dat', 'rb');
+//d2 = fread(fid, inf, 'short');
+//fclose(fid);
+//figure;
+//subplot(211); plot(d2);
+//
+//qrs = load('C:\Users\guang\Desktop\SmartHealth\2018\data\100.txt');
+//
+//subplot(212); plot(d2); hold on; plot(qrs, d2(qrs), '.r');
+*/
 ```
 ### 2.带通滤波器
 ```
-#include"qrs.h"
-
-float qrsfilter(float x)
+#include "Qrsdetect.h"
+#include <math.h>//引入绝对值函数；
+#include <stdio.h>
+//从matlab中求出a，b系数；
+//int QrsDetect_flag = 0;
+float bpfilter(float xn)
 {
-	return 0;
-}
+	static const int OrderA = 5;
+	static const int OrderB = 5;
+	static const float Ceof_A[OrderA] = { 1, -3.39756791945667, 4.49126771653074, -2.73830049324164, 0.652837763407545 };
+	static const float Ceof_B[OrderB] = { 0.0186503962278372, 0, -0.0373007924556744, 0, 0.0186503962278372 };
+	static float buffer_x[OrderA] = { 0 }; //使一维数组内的五个都是零；
+	static float buffer_y[OrderB] = { 0 };
+	static int filter_index = 0;
 
-        static const float Ceof_A[5]={1,-3.39756791945667,4.49126771653074,-2.73830049324164,0.652837763457545};
-        static const float Ceof_B[5]={0.0186503962278372,0,-0.0373007924556744,0,0.0186503962278372};
-float bpfilter(f#include<stdio.h>
-#include"qrs.h"
-void main()
-{
 
-	printf("helloworld/n");
-	FILE *fp=fopen("C:data//100.dat","rb");
-		FILE *fp1=fopen("data//100_filt.dat","wb");
-	short x;
-	for(int i=0;i<1000;i++)
+	float tmpx = Ceof_B[0] * xn;;
+	int ptr = filter_index;
+	for (int i = 1; i < OrderB; i++)
 	{
-		fread(&x,sizeof(short),1,fp);
-		short y=2*x;
-        fwrite(&y,sizeof(short),1,fp1);
-	    printf("%d " , x);
-		int res = QRSDetect(x);
-			if(res ==1)
-				printf("there is a qrs in %d samples");
+		tmpx += buffer_x[ptr] * Ceof_B[i];
+		ptr--;
+		if (ptr < 0)  ptr = OrderB - 1;
 	}
-    fclose(fp);
-    fclose(fp1);
-}loat xn)
+
+	float tmpy = 0;
+	ptr = filter_index;
+	for (int j = 1; j < OrderA; j++)
+	{
+		tmpy += buffer_y[ptr] * Ceof_A[j ];
+		ptr--;
+		if (ptr < 0)  ptr = OrderA - 1;
+	}
+	float yn = tmpx - tmpy ;	
+	filter_index++;
+	if (filter_index == 5) filter_index = 0;
+	buffer_y[filter_index] = yn;
+	buffer_x[filter_index] = xn;
+	return yn;
+
+}
+
+//*依据差分方程写滤波器；
+float diff(float xn)
+{
+	static float xn1 = 0;
+	float yn = xn -xn1;  
+	xn1 = xn;
+	yn = fabs(yn);//直接利用绝对值函数求差分；
+	return yn;
+}
+// y(n) = y(n-1) + x(n) - x(n-N)
+float smooth(float xn)
 {
 
-	    float yn4,yn3,yn2,yn1=0;
-	    float xn4,xn3,xn2,xn1=0;
-		float yn = xn*Ceof_B[0] + xn1*Ceof_B[1] + xn2 *Ceof_B[2] + xn3*Ceof_B[3] + xn4 * Ceof_B[4] - yn1 * Ceof_A[1] - yn2 * Ceof_A[2]  - yn3 * Ceof_A[3]  - yn4 * Ceof_A[4] ;
-		static float buf_x[5];
-	    static float buf_y[5];
-		static int curpos=0;
+	// 
 
-	    float tmpxn=0;
+	static const int NSmooth = 25;
+	static float buffer_x[NSmooth] = { 0 };
+	static float yn1 = 0;
+	static int ptrBuff = 0;
 
-		yn4=yn3;
-		yn3=yn2;
-        yn2=yn1;
-		yn1=yn;
-		xn4=xn3;
-		xn3=xn2;
-        xn2=xn1;
-		xn1=xn;
-		return yn;
+	int ptr = ptrBuff;
+	yn1 +=  xn - buffer_x[ptr];
+
+
+	buffer_x[ptrBuff] = xn;
+	ptrBuff++;
+	if (ptrBuff == NSmooth)  ptrBuff = 0;
+
+
+	return yn1/ NSmooth;
+
 }
-float diff(float x)
+
+int median(int *array, int datnum)
 {
-	return 0;
+	int i, j, k, temp, sort[20];
+	for (i = 0; i < datnum; ++i)
+		sort[i] = array[i];
+	for (i = 0; i < datnum; ++i)
+	{
+		temp = sort[i];
+		for (j = 0; (temp < sort[j]) && (j < i); ++j);
+		for (k = i - 1; k >= j; --k)
+			sort[k + 1] = sort[k];
+		sort[j] = temp;
+	}
+	return(sort[datnum >> 1]);
 }
-float smooth(float x)
+int QrsDectet(int x)
 {
-	return 0;
+	static int count = 0;
+	static int sampleRate = 250;
+	static int det_thresh = 0;
+
+	static int initMax = 0, nInitPeaks = 0;
+	static int peaksbuf[8];
+
+	static int flag = 0; 
+	static int delay = 0;
+
+	int datum = smooth(diff(bpfilter(x)));
+	count++;
+
+	int isQrs = 0;
+	if (nInitPeaks  < 8)
+	{
+		if (datum > initMax) initMax = datum;
+		if (count%sampleRate == 0)
+		{
+			peaksbuf[nInitPeaks] = initMax;
+			initMax = 0; 
+			flag = 0; 
+			nInitPeaks++;
+			if (nInitPeaks == 8)
+			{
+				det_thresh = median(peaksbuf, 8)*0.5;
+			}
+		}
+	}
+	else
+	{
+	
+		switch (flag)
+		{
+		case 0:
+			if(datum > det_thresh)
+				flag = 1;
+			break;
+		case 1:
+			delay++;
+			if (delay == 10)
+			{
+				flag = 2;
+			}
+			break;
+		case 2:
+
+			if(datum < det_thresh)
+			{
+				isQrs = 1;
+				flag = 3;
+			}
+			break;
+		case 3:
+			delay++;
+			if (delay < 250*0.3)
+			{
+				flag = 0; 
+				delay = 0;
+			}
+			break;
+		}	
+	}
+
+	return isQrs;
+
 }
-int QRSDetect(float x)
-{
-	return 0;
-}
+
+//
+//float smooth(float xn[])
+//{	float yn[] = {};
+//	sum =0;
+//	for(int j=0;j<size;j++)
+//	{
+//		if(j<N/2)
+//		{
+//			for(int k=0;k<N;k++)
+//			{
+//				sum+=xn[j+k];
+//			}
+//			xn[j]=sum/N;//若j<N/2,则直接取前几位数的平均值；
+//		}
+//		else
+//			if(j<size-N/2)
+//			{
+//				for(int k=0;k<N/2;k++)
+//			{	
+//				sum+=(xn[j+k]+xn[j-k]);
+//			}
+//			xn[j]=sum/N;//取j前后各k位数,计算size-N/2前所有数的平均值；
+//			{
+//			else
+//			}
+//				for(int k=0;k<size-j;k++)
+//			{
+//				sum+=xn[j-k];
+//			}
+//			xn[j]=sum/N;
+//		}
+//		yn[]=xn[j]
+//		sum=0;
+//	}
+//	return yn[];
+//}
+
 ```
+
+### 3.h文件
 ```
-#ifndef _QRS_DETECT_H_
-#define _QRS_DETECT_H_float 
-float qrsfilter(float x);
+//头文件里面是一些宏定义、全局变量定义、函数声明
+#ifndef __QRS_DETECT_H__
+#define __QRS_DERECT_H__
+#define size  1000//数组大小为1000
+#define N 10//滑动平均滤波计算平均值时所取的点数
+
+
+
 float bpfilter(float x);
 float diff(float x);
 float smooth(float x);
-int QRSDetect(float x);  
-#endif
-```
-### 3.峰值点
-```
-#include "qrs.h"
 
-const int DEFALTE_SLOW = 1;
-const int DEFALTE_FAST = 2;
-const int FIND_BEAT = 3;
-static int gflag = { 0 };
-int flag = { 0 };
-double gsbn1 = { 0 };
-int peak_locs[100];
-int val_locs[100];
-double peak_amp[100];
-double val_amp[100];
-int num = 0;
-int nibp_pushdata(double x)
-{
-	switch (gflag)
-	{
-	case 0:
-		if (x > 5 && x < gsbn1)
-		{
-			gflag = DEFALTE_SLOW;
-			flag = 1; //peakfind跳出default
-			return DEFALTE_SLOW;
-		}
-		else
-			gsbn1 = x;
-			return 0;
-		break;
-		default:
-			return 0;
-		break;
-	}	
-}
-void nibp_peakfind(double bs)
-{
-	double thr = 0.5;
-	static int max_loc = 0, min_loc = 0;
-	static double max = 0, min = 100;
-	switch (flag)
-	{
-	case 1://上升沿
-		if (gsbn1<thr && bs>thr)
-		{
-			flag = 2;
-			val_amp[num] = min;
-			val_locs[num] = min_loc;
-			min = 100;
-			num++;
-		}
-		if (bs - min<0)
-		{
-			min = bs;
-			min_loc = loc;
-		}
-		gsbn1 = bs;
-		break;
-	case 2://下降沿
-		if (gsbn1>thr && bs<thr)
-		{
-			flag = 1;
-			peak_amp[num] = max;
-			peak_locs[num] = max_loc;
-			max = 0;
-		}
-		if (bs - max>0)
-		{
-			max = bs;
-			max_loc = loc;
-		}		
-		gsbn1 = bs;
-		break;
-	default:
-		break;
-	}
-}
-int cal_rate()
-{
-	int total = 0;
-	for (int i = 2;i <= num;i++)
-	{
-		total = total + peak_locs[i] - peak_locs[i-1];
-	}
-	int rate = 60 * 120 / (total / (num-1));
-	return rate;
-}
+int QrsDectet(int x);
+
+#endif
 ```
