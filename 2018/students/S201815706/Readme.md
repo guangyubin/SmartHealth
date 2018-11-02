@@ -136,7 +136,36 @@ figure(4);plot(sig1);xlim([1000 5000]);hold on,plot(qrs,sig1(qrs),'*r');
    
    
 ## 二、运用C语言实现对心电信号的处理   
+   运用C语编写滤波器，对心电信号进行滤波。
 
+### 1、主函数
+
+```
+main.cpp
+#include <stdio.h>
+#include "QrsDetect.h"
+void main()
+{
+      printf("helloworld\n");
+      FILE*fp=fopen("data//100.dat","rb");
+	  FILE*fp1=fopen("data//100_filt.dat","wb");
+	  short x;
+	  for(int i=0;i<1000;i++)
+	  {
+		  fread(&x,sizeof(short),1,fp);
+		  short y=2*x;
+		  fwrite(&y,sizeof(short),1,fp1);
+		  printf("%d",x);
+		  int res=QRSDetect(x);
+		  if(res==1)
+		  printf("there is a qrs in %d samples ",i);
+	  }
+	  fclose(fp);
+	  fclose(fp1);
+
+} 
+```
+### 2、滤波器
 ```
 QrsDectet.cpp
 #include "QrsDectect.h"
@@ -165,9 +194,11 @@ int QRSDetect(float x);
 
 
 #endif
+```
 
+### 3、找出心电信号的QRS波个数
 
-
+```
 QrsDetect.h
 #ifndef __QRS_DETECT_H__
 #define __QRS_DETECT_H__
@@ -189,28 +220,4 @@ int QRSDetect(float x);
 
 #endif
 
-
-main.cpp
-#include <stdio.h>
-#include "QrsDetect.h"
-void main()
-{
-      printf("helloworld\n");
-      FILE*fp=fopen("data//100.dat","rb");
-	  FILE*fp1=fopen("data//100_filt.dat","wb");
-	  short x;
-	  for(int i=0;i<1000;i++)
-	  {
-		  fread(&x,sizeof(short),1,fp);
-		  short y=2*x;
-		  fwrite(&y,sizeof(short),1,fp1);
-		  printf("%d",x);
-		  int res=QRSDetect(x);
-		  if(res==1)
-		  printf("there is a qrs in %d samples ",i);
-	  }
-	  fclose(fp);
-	  fclose(fp1);
-
-} 
 ```
