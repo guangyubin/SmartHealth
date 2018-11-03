@@ -60,7 +60,7 @@
 	
 #### （2）.图像
 
-![频域响应](https://github.com/guangyubin/SmartHealth/blob/master/2018/students/S201815703/2.jpg)
+![滤波与原始信号频域分析对比图](https://github.com/guangyubin/SmartHealth/blob/master/2018/students/S201815703/滤波与原始信号频域分析对比图.png)
   
 ### 3.标记R波
 #### （1）分别画出带通，差分，取绝对值，平滑滤波之后的图像
