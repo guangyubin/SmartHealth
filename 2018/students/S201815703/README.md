@@ -50,15 +50,12 @@
  subplot(212),plot(f2(1000:4000),'b');
  title('滤波后信号');
  %%
+ [Fx,fbin] = ecg_psd(f1,250,10,100);% ecg_psd 函数代码见ecg_psd.m文件
+ [Fx1,fbin] = ecg_psd(f2,250,10,100);
  
- for ii=1:100
-     x=d(ii*2500:ii*2500+2499);
-     x=x-mean(x);
-     Fx(ii,:)=abs(fft(x));
- end
- %%
- fbin=0:1/10:fs-1/(10);
- figure;plot(fbin,mean(Fx,1))
+ figure;  
+ plot(fbin,mean(Fx,1))
+ hold on, plot(fbin,mean(Fx1,1),'red');
  ```
 	
 #### （2）.图像
