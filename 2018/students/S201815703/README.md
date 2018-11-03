@@ -187,7 +187,7 @@ void main()
 	fclose(fp2);
 } 
 ```
-### 2、滤波器
+### 2、滤波器以及找出心电信号的QRS波个数
 ```
 QrsDectet.cpp
 #include "QrsDectect.h"
@@ -340,7 +340,7 @@ int QrsDectet(int x)
 #endif
 ```
 
-### 3、找出心电信号的QRS波个数
+### 3、.H文件
 
 ```
 QrsDetect.h
