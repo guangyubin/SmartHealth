@@ -141,57 +141,58 @@ figure(4);plot(sig1);xlim([1000 5000]);hold on,plot(qrs,sig1(qrs),'*r');
 ### 1、主函数
 
 ```
-main.cpp
-#include <stdio.h>
-#include "QrsDetect.h"
+#include<stdio.h>
+#include"QrsDetect.h"
+
+
 void main()
 {
-      printf("helloworld\n");
-      FILE*fp=fopen("data//100.dat","rb");
-	  FILE*fp1=fopen("data//100_filt.dat","wb");
-	  short x;
-	  for(int i=0;i<1000;i++)
-	  {
-		  fread(&x,sizeof(short),1,fp);
-		  short y=2*x;
-		  fwrite(&y,sizeof(short),1,fp1);
-		  printf("%d",x);
-		  int res=QRSDetect(x);
-		  if(res==1)
-		  printf("there is a qrs in %d samples ",i);
-	  }
-	  fclose(fp);
-	  fclose(fp1);
+	printf("hello world!\n");
+	FILE *fp =  fopen("C:\\Users\\Nice\\Desktop\\qrs\\100.dat", "rb");//打开数据文件
+	FILE *fp1 = fopen("C:\\Users\\Nice\\Desktop\\qrs\\100_filt.dat", "wb");
+	FILE *fp2 = fopen("C:\\Users\\Nice\\Desktop\\qrs\\100.txt", "w+");
+	short x;
+	int pos = 0;
+	int i; 
 
-} 
+
+	for ( i = 0; i < 20000; i++)
+	{
+		fread(&x, sizeof(short), 1, fp);
+
+		short y = smooth(diff(bpfilter(x)));
+		fwrite(&y, sizeof(short), 1, fp1);
+		//	printf("%d",x);
+		int res = QrsDectet(x);
+		if (res == 1)
+		{
+			fprintf(fp2,"%d \n" ,i );
+			printf("there is a qrs in samples  %d \n", i);
+		}
+	}
+
+	
+	fclose(fp);
+	fclose(fp1);
+	fclose(fp2);
+
+}
 ```
 ### 2、滤波器
 ```
 QrsDectet.cpp
-#include "QrsDectect.h"
+#ifndef __QRS_DETECT_H__
+#define __QRS_DERECT_H__
+#define size  1000//数组大小为1000
+#define N 10//滑动平均滤波计算平均值时所取的点数
 
-float qrsfilter(float x)
-{
-	return 0;
-}
 
-float bpfilter(float x)
-{
 
-	return 0;
-}
-float diff(float x)
-{
-	return 0;
-}
-//online QRSdetector using t;
-//intput : a sample ecg data;
-//out;
-//     out=0 :there is no qrs;
-//     out=1: there is a qrs;
+float bpfilter(float x);
+float diff(float x);
+float smooth(float x);
 
-int QRSDetect(float x);
-
+int QrsDectet(int x);
 
 #endif
 ```
@@ -199,25 +200,19 @@ int QRSDetect(float x);
 ### 3、找出心电信号的QRS波个数
 
 ```
-QrsDetect.h
+QrsDectet.
 #ifndef __QRS_DETECT_H__
-#define __QRS_DETECT_H__
+#define __QRS_DERECT_H__
+#define size  1000//数组大小为1000
+#define N 10//滑动平均滤波计算平均值时所取的点数
 
-float qrsfilter(float x);
+
 
 float bpfilter(float x);
 float diff(float x);
 float smooth(float x);
 
-//online QRSdetector using t;
-//intput : a sample ecg data;
-//out;
-//     out=0 :there is no qrs;
-//     out=1: there is a qrs;
-
-int QRSDetect(float x);
-
+int QrsDectet(int x);
 
 #endif
-
 ```
