@@ -141,6 +141,7 @@ figure(4);plot(sig1);xlim([1000 5000]);hold on,plot(qrs,sig1(qrs),'*r');
 ### 1、主函数
 
 ```
+main.cpp
 #include<stdio.h>
 #include"QrsDetect.h"
 
@@ -200,7 +201,7 @@ int QrsDectet(int x);
 ### 3、找出心电信号的QRS波个数
 
 ```
-QrsDectet.
+QrsDectet.h
 #ifndef __QRS_DETECT_H__
 #define __QRS_DERECT_H__
 #define size  1000//数组大小为1000
