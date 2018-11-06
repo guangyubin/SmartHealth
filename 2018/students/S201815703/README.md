@@ -375,4 +375,4 @@ subplot(212); plot(d2); hold on; plot(qrs, d2(qrs), '.r');
 
 #### 5.图像
 
-![图像](https://github.com/guangyubin/SmartHealth/blob/master/2018/students/S201815703/image/)
+![图像](https://github.com/guangyubin/SmartHealth/blob/master/2018/students/S201815703/image/5.jpg)
