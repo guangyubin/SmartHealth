@@ -1,8 +1,8 @@
 #include "ecglib.h"
 #include <iostream>
 using namespace std;
-bool InitEcglib()
+bool init_ecg_lib()
 {
-    cout << "ECGLIB Init " <<endl;
+    cout << "init_ecg_lib " <<endl;
     return false;
 }

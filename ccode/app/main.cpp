@@ -1,9 +1,9 @@
 #include <iostream>
-#include "ecglib.h"
+#include <ecglib/ecglib.h>
 
 int main(int, char**) {
     std::cout << "Hello, world!\n" ;
-    InitEcglib();
+    init_ecg_lib();
 }
 // test
 // test github

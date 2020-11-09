@@ -1,7 +1,14 @@
-project(main_ecg)
-file(GLOB ECGLIB ecglib/*.cpp)
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/ecglib)
-add_executable(main_ecg  main.cpp ${ECGLIB})
-set(CPACK_PROJECT_NAME ${PROJECT_NAME})
-set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
 
+project(SMARTHEALTH VERSION 0.1.0)
+SET(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/../build/lib) 
+SET(CMAKE_RUNTIME_OUTPUT_DIRECTORY  ${PROJECT_SOURCE_DIR}/../build/bin) 
+add_subdirectory(ecglib)
+add_subdirectory(app)
+
+
+message(STATUS ${CMAKE_CURRENT_SOURCE_DIR})
+message(STATUS ${PROJECT_SOURCE_DIR})
+message(STATUS ${LIBRARY_OUTPUT_PATH})
+message(STATUS ${CMAKE_RUNTIME_OUTPUT_DIRECTORY})
+message(STATUS ${PROJECT_BINARY_DIR})
+message(STATUS ${CMAKE_PROJECT_VERSION})
