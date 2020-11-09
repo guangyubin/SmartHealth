@@ -1,13 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-
-<title>charp01</title>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>charp01</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
 
 <style type="text/css">
     /*!
@@ -204,6 +199,7 @@ th {
   *:before,
   *:after {
     background: transparent !important;
+    color: #000 !important;
     box-shadow: none !important;
     text-shadow: none !important;
   }
@@ -6748,15 +6744,15 @@ button.close {
 *
 */
 /*!
- *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
+ *  Font Awesome 4.2.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
  */
 /* FONT PATH
  * -------------------------- */
 @font-face {
   font-family: 'FontAwesome';
-  src: url('../components/font-awesome/fonts/fontawesome-webfont.eot?v=4.7.0');
-  src: url('../components/font-awesome/fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'), url('../components/font-awesome/fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'), url('../components/font-awesome/fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'), url('../components/font-awesome/fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'), url('../components/font-awesome/fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');
+  src: url('../components/font-awesome/fonts/fontawesome-webfont.eot?v=4.2.0');
+  src: url('../components/font-awesome/fonts/fontawesome-webfont.eot?#iefix&v=4.2.0') format('embedded-opentype'), url('../components/font-awesome/fonts/fontawesome-webfont.woff?v=4.2.0') format('woff'), url('../components/font-awesome/fonts/fontawesome-webfont.ttf?v=4.2.0') format('truetype'), url('../components/font-awesome/fonts/fontawesome-webfont.svg?v=4.2.0#fontawesomeregular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -6813,19 +6809,6 @@ button.close {
   border: solid 0.08em #eee;
   border-radius: .1em;
 }
-.fa-pull-left {
-  float: left;
-}
-.fa-pull-right {
-  float: right;
-}
-.fa.fa-pull-left {
-  margin-right: .3em;
-}
-.fa.fa-pull-right {
-  margin-left: .3em;
-}
-/* Deprecated as of 4.4.0 */
 .pull-right {
   float: right;
 }
@@ -6841,10 +6824,6 @@ button.close {
 .fa-spin {
   -webkit-animation: fa-spin 2s infinite linear;
   animation: fa-spin 2s infinite linear;
-}
-.fa-pulse {
-  -webkit-animation: fa-spin 1s infinite steps(8);
-  animation: fa-spin 1s infinite steps(8);
 }
 @-webkit-keyframes fa-spin {
   0% {
@@ -6867,31 +6846,31 @@ button.close {
   }
 }
 .fa-rotate-90 {
-  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)";
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
 }
 .fa-rotate-180 {
-  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
   -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
 }
 .fa-rotate-270 {
-  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=3)";
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
   -webkit-transform: rotate(270deg);
   -ms-transform: rotate(270deg);
   transform: rotate(270deg);
 }
 .fa-flip-horizontal {
-  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)";
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1);
   -webkit-transform: scale(-1, 1);
   -ms-transform: scale(-1, 1);
   transform: scale(-1, 1);
 }
 .fa-flip-vertical {
-  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1);
   -webkit-transform: scale(1, -1);
   -ms-transform: scale(1, -1);
   transform: scale(1, -1);
@@ -7376,7 +7355,6 @@ button.close {
 .fa-twitter:before {
   content: "\f099";
 }
-.fa-facebook-f:before,
 .fa-facebook:before {
   content: "\f09a";
 }
@@ -7389,7 +7367,6 @@ button.close {
 .fa-credit-card:before {
   content: "\f09d";
 }
-.fa-feed:before,
 .fa-rss:before {
   content: "\f09e";
 }
@@ -8027,8 +8004,7 @@ button.close {
 .fa-male:before {
   content: "\f183";
 }
-.fa-gittip:before,
-.fa-gratipay:before {
+.fa-gittip:before {
   content: "\f184";
 }
 .fa-sun-o:before {
@@ -8132,7 +8108,7 @@ button.close {
 .fa-digg:before {
   content: "\f1a6";
 }
-.fa-pied-piper-pp:before {
+.fa-pied-piper:before {
   content: "\f1a7";
 }
 .fa-pied-piper-alt:before {
@@ -8258,7 +8234,6 @@ button.close {
   content: "\f1ce";
 }
 .fa-ra:before,
-.fa-resistance:before,
 .fa-rebel:before {
   content: "\f1d0";
 }
@@ -8272,8 +8247,6 @@ button.close {
 .fa-git:before {
   content: "\f1d3";
 }
-.fa-y-combinator-square:before,
-.fa-yc-square:before,
 .fa-hacker-news:before {
   content: "\f1d4";
 }
@@ -8441,657 +8414,6 @@ button.close {
 }
 .fa-meanpath:before {
   content: "\f20c";
-}
-.fa-buysellads:before {
-  content: "\f20d";
-}
-.fa-connectdevelop:before {
-  content: "\f20e";
-}
-.fa-dashcube:before {
-  content: "\f210";
-}
-.fa-forumbee:before {
-  content: "\f211";
-}
-.fa-leanpub:before {
-  content: "\f212";
-}
-.fa-sellsy:before {
-  content: "\f213";
-}
-.fa-shirtsinbulk:before {
-  content: "\f214";
-}
-.fa-simplybuilt:before {
-  content: "\f215";
-}
-.fa-skyatlas:before {
-  content: "\f216";
-}
-.fa-cart-plus:before {
-  content: "\f217";
-}
-.fa-cart-arrow-down:before {
-  content: "\f218";
-}
-.fa-diamond:before {
-  content: "\f219";
-}
-.fa-ship:before {
-  content: "\f21a";
-}
-.fa-user-secret:before {
-  content: "\f21b";
-}
-.fa-motorcycle:before {
-  content: "\f21c";
-}
-.fa-street-view:before {
-  content: "\f21d";
-}
-.fa-heartbeat:before {
-  content: "\f21e";
-}
-.fa-venus:before {
-  content: "\f221";
-}
-.fa-mars:before {
-  content: "\f222";
-}
-.fa-mercury:before {
-  content: "\f223";
-}
-.fa-intersex:before,
-.fa-transgender:before {
-  content: "\f224";
-}
-.fa-transgender-alt:before {
-  content: "\f225";
-}
-.fa-venus-double:before {
-  content: "\f226";
-}
-.fa-mars-double:before {
-  content: "\f227";
-}
-.fa-venus-mars:before {
-  content: "\f228";
-}
-.fa-mars-stroke:before {
-  content: "\f229";
-}
-.fa-mars-stroke-v:before {
-  content: "\f22a";
-}
-.fa-mars-stroke-h:before {
-  content: "\f22b";
-}
-.fa-neuter:before {
-  content: "\f22c";
-}
-.fa-genderless:before {
-  content: "\f22d";
-}
-.fa-facebook-official:before {
-  content: "\f230";
-}
-.fa-pinterest-p:before {
-  content: "\f231";
-}
-.fa-whatsapp:before {
-  content: "\f232";
-}
-.fa-server:before {
-  content: "\f233";
-}
-.fa-user-plus:before {
-  content: "\f234";
-}
-.fa-user-times:before {
-  content: "\f235";
-}
-.fa-hotel:before,
-.fa-bed:before {
-  content: "\f236";
-}
-.fa-viacoin:before {
-  content: "\f237";
-}
-.fa-train:before {
-  content: "\f238";
-}
-.fa-subway:before {
-  content: "\f239";
-}
-.fa-medium:before {
-  content: "\f23a";
-}
-.fa-yc:before,
-.fa-y-combinator:before {
-  content: "\f23b";
-}
-.fa-optin-monster:before {
-  content: "\f23c";
-}
-.fa-opencart:before {
-  content: "\f23d";
-}
-.fa-expeditedssl:before {
-  content: "\f23e";
-}
-.fa-battery-4:before,
-.fa-battery:before,
-.fa-battery-full:before {
-  content: "\f240";
-}
-.fa-battery-3:before,
-.fa-battery-three-quarters:before {
-  content: "\f241";
-}
-.fa-battery-2:before,
-.fa-battery-half:before {
-  content: "\f242";
-}
-.fa-battery-1:before,
-.fa-battery-quarter:before {
-  content: "\f243";
-}
-.fa-battery-0:before,
-.fa-battery-empty:before {
-  content: "\f244";
-}
-.fa-mouse-pointer:before {
-  content: "\f245";
-}
-.fa-i-cursor:before {
-  content: "\f246";
-}
-.fa-object-group:before {
-  content: "\f247";
-}
-.fa-object-ungroup:before {
-  content: "\f248";
-}
-.fa-sticky-note:before {
-  content: "\f249";
-}
-.fa-sticky-note-o:before {
-  content: "\f24a";
-}
-.fa-cc-jcb:before {
-  content: "\f24b";
-}
-.fa-cc-diners-club:before {
-  content: "\f24c";
-}
-.fa-clone:before {
-  content: "\f24d";
-}
-.fa-balance-scale:before {
-  content: "\f24e";
-}
-.fa-hourglass-o:before {
-  content: "\f250";
-}
-.fa-hourglass-1:before,
-.fa-hourglass-start:before {
-  content: "\f251";
-}
-.fa-hourglass-2:before,
-.fa-hourglass-half:before {
-  content: "\f252";
-}
-.fa-hourglass-3:before,
-.fa-hourglass-end:before {
-  content: "\f253";
-}
-.fa-hourglass:before {
-  content: "\f254";
-}
-.fa-hand-grab-o:before,
-.fa-hand-rock-o:before {
-  content: "\f255";
-}
-.fa-hand-stop-o:before,
-.fa-hand-paper-o:before {
-  content: "\f256";
-}
-.fa-hand-scissors-o:before {
-  content: "\f257";
-}
-.fa-hand-lizard-o:before {
-  content: "\f258";
-}
-.fa-hand-spock-o:before {
-  content: "\f259";
-}
-.fa-hand-pointer-o:before {
-  content: "\f25a";
-}
-.fa-hand-peace-o:before {
-  content: "\f25b";
-}
-.fa-trademark:before {
-  content: "\f25c";
-}
-.fa-registered:before {
-  content: "\f25d";
-}
-.fa-creative-commons:before {
-  content: "\f25e";
-}
-.fa-gg:before {
-  content: "\f260";
-}
-.fa-gg-circle:before {
-  content: "\f261";
-}
-.fa-tripadvisor:before {
-  content: "\f262";
-}
-.fa-odnoklassniki:before {
-  content: "\f263";
-}
-.fa-odnoklassniki-square:before {
-  content: "\f264";
-}
-.fa-get-pocket:before {
-  content: "\f265";
-}
-.fa-wikipedia-w:before {
-  content: "\f266";
-}
-.fa-safari:before {
-  content: "\f267";
-}
-.fa-chrome:before {
-  content: "\f268";
-}
-.fa-firefox:before {
-  content: "\f269";
-}
-.fa-opera:before {
-  content: "\f26a";
-}
-.fa-internet-explorer:before {
-  content: "\f26b";
-}
-.fa-tv:before,
-.fa-television:before {
-  content: "\f26c";
-}
-.fa-contao:before {
-  content: "\f26d";
-}
-.fa-500px:before {
-  content: "\f26e";
-}
-.fa-amazon:before {
-  content: "\f270";
-}
-.fa-calendar-plus-o:before {
-  content: "\f271";
-}
-.fa-calendar-minus-o:before {
-  content: "\f272";
-}
-.fa-calendar-times-o:before {
-  content: "\f273";
-}
-.fa-calendar-check-o:before {
-  content: "\f274";
-}
-.fa-industry:before {
-  content: "\f275";
-}
-.fa-map-pin:before {
-  content: "\f276";
-}
-.fa-map-signs:before {
-  content: "\f277";
-}
-.fa-map-o:before {
-  content: "\f278";
-}
-.fa-map:before {
-  content: "\f279";
-}
-.fa-commenting:before {
-  content: "\f27a";
-}
-.fa-commenting-o:before {
-  content: "\f27b";
-}
-.fa-houzz:before {
-  content: "\f27c";
-}
-.fa-vimeo:before {
-  content: "\f27d";
-}
-.fa-black-tie:before {
-  content: "\f27e";
-}
-.fa-fonticons:before {
-  content: "\f280";
-}
-.fa-reddit-alien:before {
-  content: "\f281";
-}
-.fa-edge:before {
-  content: "\f282";
-}
-.fa-credit-card-alt:before {
-  content: "\f283";
-}
-.fa-codiepie:before {
-  content: "\f284";
-}
-.fa-modx:before {
-  content: "\f285";
-}
-.fa-fort-awesome:before {
-  content: "\f286";
-}
-.fa-usb:before {
-  content: "\f287";
-}
-.fa-product-hunt:before {
-  content: "\f288";
-}
-.fa-mixcloud:before {
-  content: "\f289";
-}
-.fa-scribd:before {
-  content: "\f28a";
-}
-.fa-pause-circle:before {
-  content: "\f28b";
-}
-.fa-pause-circle-o:before {
-  content: "\f28c";
-}
-.fa-stop-circle:before {
-  content: "\f28d";
-}
-.fa-stop-circle-o:before {
-  content: "\f28e";
-}
-.fa-shopping-bag:before {
-  content: "\f290";
-}
-.fa-shopping-basket:before {
-  content: "\f291";
-}
-.fa-hashtag:before {
-  content: "\f292";
-}
-.fa-bluetooth:before {
-  content: "\f293";
-}
-.fa-bluetooth-b:before {
-  content: "\f294";
-}
-.fa-percent:before {
-  content: "\f295";
-}
-.fa-gitlab:before {
-  content: "\f296";
-}
-.fa-wpbeginner:before {
-  content: "\f297";
-}
-.fa-wpforms:before {
-  content: "\f298";
-}
-.fa-envira:before {
-  content: "\f299";
-}
-.fa-universal-access:before {
-  content: "\f29a";
-}
-.fa-wheelchair-alt:before {
-  content: "\f29b";
-}
-.fa-question-circle-o:before {
-  content: "\f29c";
-}
-.fa-blind:before {
-  content: "\f29d";
-}
-.fa-audio-description:before {
-  content: "\f29e";
-}
-.fa-volume-control-phone:before {
-  content: "\f2a0";
-}
-.fa-braille:before {
-  content: "\f2a1";
-}
-.fa-assistive-listening-systems:before {
-  content: "\f2a2";
-}
-.fa-asl-interpreting:before,
-.fa-american-sign-language-interpreting:before {
-  content: "\f2a3";
-}
-.fa-deafness:before,
-.fa-hard-of-hearing:before,
-.fa-deaf:before {
-  content: "\f2a4";
-}
-.fa-glide:before {
-  content: "\f2a5";
-}
-.fa-glide-g:before {
-  content: "\f2a6";
-}
-.fa-signing:before,
-.fa-sign-language:before {
-  content: "\f2a7";
-}
-.fa-low-vision:before {
-  content: "\f2a8";
-}
-.fa-viadeo:before {
-  content: "\f2a9";
-}
-.fa-viadeo-square:before {
-  content: "\f2aa";
-}
-.fa-snapchat:before {
-  content: "\f2ab";
-}
-.fa-snapchat-ghost:before {
-  content: "\f2ac";
-}
-.fa-snapchat-square:before {
-  content: "\f2ad";
-}
-.fa-pied-piper:before {
-  content: "\f2ae";
-}
-.fa-first-order:before {
-  content: "\f2b0";
-}
-.fa-yoast:before {
-  content: "\f2b1";
-}
-.fa-themeisle:before {
-  content: "\f2b2";
-}
-.fa-google-plus-circle:before,
-.fa-google-plus-official:before {
-  content: "\f2b3";
-}
-.fa-fa:before,
-.fa-font-awesome:before {
-  content: "\f2b4";
-}
-.fa-handshake-o:before {
-  content: "\f2b5";
-}
-.fa-envelope-open:before {
-  content: "\f2b6";
-}
-.fa-envelope-open-o:before {
-  content: "\f2b7";
-}
-.fa-linode:before {
-  content: "\f2b8";
-}
-.fa-address-book:before {
-  content: "\f2b9";
-}
-.fa-address-book-o:before {
-  content: "\f2ba";
-}
-.fa-vcard:before,
-.fa-address-card:before {
-  content: "\f2bb";
-}
-.fa-vcard-o:before,
-.fa-address-card-o:before {
-  content: "\f2bc";
-}
-.fa-user-circle:before {
-  content: "\f2bd";
-}
-.fa-user-circle-o:before {
-  content: "\f2be";
-}
-.fa-user-o:before {
-  content: "\f2c0";
-}
-.fa-id-badge:before {
-  content: "\f2c1";
-}
-.fa-drivers-license:before,
-.fa-id-card:before {
-  content: "\f2c2";
-}
-.fa-drivers-license-o:before,
-.fa-id-card-o:before {
-  content: "\f2c3";
-}
-.fa-quora:before {
-  content: "\f2c4";
-}
-.fa-free-code-camp:before {
-  content: "\f2c5";
-}
-.fa-telegram:before {
-  content: "\f2c6";
-}
-.fa-thermometer-4:before,
-.fa-thermometer:before,
-.fa-thermometer-full:before {
-  content: "\f2c7";
-}
-.fa-thermometer-3:before,
-.fa-thermometer-three-quarters:before {
-  content: "\f2c8";
-}
-.fa-thermometer-2:before,
-.fa-thermometer-half:before {
-  content: "\f2c9";
-}
-.fa-thermometer-1:before,
-.fa-thermometer-quarter:before {
-  content: "\f2ca";
-}
-.fa-thermometer-0:before,
-.fa-thermometer-empty:before {
-  content: "\f2cb";
-}
-.fa-shower:before {
-  content: "\f2cc";
-}
-.fa-bathtub:before,
-.fa-s15:before,
-.fa-bath:before {
-  content: "\f2cd";
-}
-.fa-podcast:before {
-  content: "\f2ce";
-}
-.fa-window-maximize:before {
-  content: "\f2d0";
-}
-.fa-window-minimize:before {
-  content: "\f2d1";
-}
-.fa-window-restore:before {
-  content: "\f2d2";
-}
-.fa-times-rectangle:before,
-.fa-window-close:before {
-  content: "\f2d3";
-}
-.fa-times-rectangle-o:before,
-.fa-window-close-o:before {
-  content: "\f2d4";
-}
-.fa-bandcamp:before {
-  content: "\f2d5";
-}
-.fa-grav:before {
-  content: "\f2d6";
-}
-.fa-etsy:before {
-  content: "\f2d7";
-}
-.fa-imdb:before {
-  content: "\f2d8";
-}
-.fa-ravelry:before {
-  content: "\f2d9";
-}
-.fa-eercast:before {
-  content: "\f2da";
-}
-.fa-microchip:before {
-  content: "\f2db";
-}
-.fa-snowflake-o:before {
-  content: "\f2dc";
-}
-.fa-superpowers:before {
-  content: "\f2dd";
-}
-.fa-wpexplorer:before {
-  content: "\f2de";
-}
-.fa-meetup:before {
-  content: "\f2e0";
-}
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
-}
-.sr-only-focusable:active,
-.sr-only-focusable:focus {
-  position: static;
-  width: auto;
-  height: auto;
-  margin: 0;
-  overflow: visible;
-  clip: auto;
-}
-.sr-only-focusable:active,
-.sr-only-focusable:focus {
-  position: static;
-  width: auto;
-  height: auto;
-  margin: 0;
-  overflow: visible;
-  clip: auto;
 }
 /*!
 *
@@ -9372,10 +8694,6 @@ div.traceback-wrapper {
   max-width: 800px;
   margin: auto;
 }
-div.traceback-wrapper pre.traceback {
-  max-height: 600px;
-  overflow: auto;
-}
 /**
  * Primary styles
  *
@@ -9401,10 +8719,6 @@ body > #header {
   z-index: 100;
 }
 body > #header #header-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 5px;
   padding-bottom: 5px;
   padding-top: 5px;
   box-sizing: border-box;
@@ -9436,16 +8750,13 @@ body > #header .header-bar {
   padding-top: 1px;
   padding-bottom: 1px;
 }
+@media (max-width: 991px) {
+  #ipython_notebook {
+    margin-left: 10px;
+  }
+}
 [dir="rtl"] #ipython_notebook {
-  margin-right: 10px;
-  margin-left: 0;
-}
-[dir="rtl"] #ipython_notebook.pull-left {
   float: right !important;
-  float: right;
-}
-.flex-spacer {
-  flex: 1;
 }
 #noscript {
   width: auto;
@@ -9480,14 +8791,8 @@ body > #header .header-bar {
 input.ui-button {
   padding: 0.3em 0.9em;
 }
-span#kernel_logo_widget {
-  margin: 0 10px;
-}
 span#login_widget {
   float: right;
-}
-[dir="rtl"] span#login_widget {
-  float: left;
 }
 span#login_widget > .button,
 #logout {
@@ -9603,9 +8908,6 @@ span#login_widget > .button .badge,
   overflow: auto;
   flex: 1;
 }
-.modal-header {
-  cursor: move;
-}
 @media (min-width: 768px) {
   .modal .modal-dialog {
     width: 700px;
@@ -9626,19 +8928,6 @@ span#login_widget > .button .badge,
   display: inline-block;
   margin-bottom: -4px;
 }
-[dir="rtl"] .center-nav form.pull-left {
-  float: right !important;
-  float: right;
-}
-[dir="rtl"] .center-nav .navbar-text {
-  float: right;
-}
-[dir="rtl"] .navbar-inner {
-  text-align: right;
-}
-[dir="rtl"] div.text-left {
-  text-align: right;
-}
 /*!
 *
 * IPython tree view
@@ -9655,42 +8944,34 @@ span#login_widget > .button .badge,
   margin: 0;
 }
 .alternate_upload input.fileinput {
-  position: absolute;
-  display: block;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  cursor: pointer;
+  text-align: center;
+  vertical-align: middle;
+  display: inline;
   opacity: 0;
   z-index: 2;
-}
-.alternate_upload .btn-xs > input.fileinput {
-  margin: -1px -5px;
+  width: 12ex;
+  margin-right: -12ex;
 }
 .alternate_upload .btn-upload {
-  position: relative;
   height: 22px;
-}
-::-webkit-file-upload-button {
-  cursor: pointer;
 }
 /**
  * Primary styles
  *
  * Author: Jupyter Development Team
  */
+[dir="rtl"] #tabs li {
+  float: right;
+}
 ul#tabs {
   margin-bottom: 4px;
+}
+[dir="rtl"] ul#tabs {
+  margin-right: 0px;
 }
 ul#tabs a {
   padding-top: 6px;
   padding-bottom: 4px;
-}
-[dir="rtl"] ul#tabs.nav-tabs > li {
-  float: right;
-}
-[dir="rtl"] ul#tabs.nav.nav-tabs {
-  padding-right: 0;
 }
 ul.breadcrumb a:focus,
 ul.breadcrumb a:hover {
@@ -9710,13 +8991,15 @@ ul.breadcrumb span {
 .list_toolbar .tree-buttons {
   padding-top: 1px;
 }
-[dir="rtl"] .list_toolbar .tree-buttons .pull-right {
+[dir="rtl"] .list_toolbar .tree-buttons {
   float: left !important;
-  float: left;
 }
-[dir="rtl"] .list_toolbar .col-sm-4,
-[dir="rtl"] .list_toolbar .col-sm-8 {
-  float: right;
+[dir="rtl"] .list_toolbar .pull-right {
+  padding-top: 1px;
+  float: left !important;
+}
+[dir="rtl"] .list_toolbar .pull-left {
+  float: right !important;
 }
 .dynamic-buttons {
   padding-top: 3px;
@@ -9772,7 +9055,7 @@ ul.breadcrumb span {
 .list_item > div input {
   margin-right: 7px;
   margin-left: 14px;
-  vertical-align: text-bottom;
+  vertical-align: baseline;
   line-height: 22px;
   position: relative;
   top: -1px;
@@ -9782,9 +9065,6 @@ ul.breadcrumb span {
   margin-left: -1px;
   vertical-align: baseline;
   line-height: 22px;
-}
-[dir="rtl"] .list_item > div input {
-  margin-right: 0;
 }
 .new-file input[type=checkbox] {
   visibility: hidden;
@@ -9800,14 +9080,6 @@ ul.breadcrumb span {
   margin-left: 7px;
   line-height: 22px;
   vertical-align: baseline;
-}
-.item_modified {
-  margin-right: 7px;
-  margin-left: 7px;
-}
-[dir="rtl"] .item_modified.pull-right {
-  float: left !important;
-  float: left;
 }
 .item_buttons {
   line-height: 1em;
@@ -9836,14 +9108,6 @@ ul.breadcrumb span {
   margin-right: 7px;
   float: left;
 }
-[dir="rtl"] .item_buttons.pull-right {
-  float: left !important;
-  float: left;
-}
-[dir="rtl"] .item_buttons .kernel-name {
-  margin-left: 7px;
-  float: right;
-}
 .toolbar_info {
   height: 24px;
   line-height: 24px;
@@ -9869,32 +9133,18 @@ ul.breadcrumb span {
   background-color: transparent;
   font-weight: bold;
 }
-.sort_button {
-  display: inline-block;
-  padding-left: 7px;
-}
-[dir="rtl"] .sort_button.pull-right {
-  float: left !important;
-  float: left;
-}
 #tree-selector {
   padding-right: 0px;
+}
+[dir="rtl"] #tree-selector a {
+  float: right;
 }
 #button-select-all {
   min-width: 50px;
 }
-[dir="rtl"] #button-select-all.btn {
-  float: right ;
-}
 #select-all {
   margin-left: 7px;
   margin-right: 2px;
-  margin-top: 2px;
-  height: 16px;
-}
-[dir="rtl"] #select-all.pull-left {
-  float: right !important;
-  float: right;
 }
 .menu_icon {
   margin-right: 2px;
@@ -9912,12 +9162,6 @@ ul.breadcrumb span {
   -moz-osx-font-smoothing: grayscale;
   content: "\f114";
 }
-.folder_icon:before.fa-pull-left {
-  margin-right: .3em;
-}
-.folder_icon:before.fa-pull-right {
-  margin-left: .3em;
-}
 .folder_icon:before.pull-left {
   margin-right: .3em;
 }
@@ -9934,12 +9178,6 @@ ul.breadcrumb span {
   content: "\f02d";
   position: relative;
   top: -1px;
-}
-.notebook_icon:before.fa-pull-left {
-  margin-right: .3em;
-}
-.notebook_icon:before.fa-pull-right {
-  margin-left: .3em;
 }
 .notebook_icon:before.pull-left {
   margin-right: .3em;
@@ -9959,12 +9197,6 @@ ul.breadcrumb span {
   top: -1px;
   color: #5cb85c;
 }
-.running_notebook_icon:before.fa-pull-left {
-  margin-right: .3em;
-}
-.running_notebook_icon:before.fa-pull-right {
-  margin-left: .3em;
-}
 .running_notebook_icon:before.pull-left {
   margin-right: .3em;
 }
@@ -9982,12 +9214,6 @@ ul.breadcrumb span {
   position: relative;
   top: -2px;
 }
-.file_icon:before.fa-pull-left {
-  margin-right: .3em;
-}
-.file_icon:before.fa-pull-right {
-  margin-left: .3em;
-}
 .file_icon:before.pull-left {
   margin-right: .3em;
 }
@@ -10002,11 +9228,8 @@ ul#new-menu {
   left: auto;
   right: 0;
 }
-#new-menu .dropdown-header {
-  font-size: 10px;
-  border-bottom: 1px solid #e5e5e5;
-  padding: 0 0 3px;
-  margin: -3px 20px 0;
+[dir="rtl"] #new-menu {
+  text-align: right;
 }
 .kernel-menu-icon {
   padding-right: 12px;
@@ -10053,6 +9276,9 @@ ul#new-menu {
 #running .panel-group .panel .panel-body .list_container .list_item:last-child {
   border-bottom: 0px;
 }
+[dir="rtl"] #running .col-sm-8 {
+  float: right !important;
+}
 .delete-button {
   display: none;
 }
@@ -10060,12 +9286,6 @@ ul#new-menu {
   display: none;
 }
 .rename-button {
-  display: none;
-}
-.move-button {
-  display: none;
-}
-.download-button {
   display: none;
 }
 .shutdown-button {
@@ -10108,12 +9328,6 @@ ul#new-menu {
   -moz-osx-font-smoothing: grayscale;
   width: 20px;
 }
-.dirty-indicator.fa-pull-left {
-  margin-right: .3em;
-}
-.dirty-indicator.fa-pull-right {
-  margin-left: .3em;
-}
 .dirty-indicator.pull-left {
   margin-right: .3em;
 }
@@ -10128,12 +9342,6 @@ ul#new-menu {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   width: 20px;
-}
-.dirty-indicator-dirty.fa-pull-left {
-  margin-right: .3em;
-}
-.dirty-indicator-dirty.fa-pull-right {
-  margin-left: .3em;
 }
 .dirty-indicator-dirty.pull-left {
   margin-right: .3em;
@@ -10150,12 +9358,6 @@ ul#new-menu {
   -moz-osx-font-smoothing: grayscale;
   width: 20px;
 }
-.dirty-indicator-clean.fa-pull-left {
-  margin-right: .3em;
-}
-.dirty-indicator-clean.fa-pull-right {
-  margin-left: .3em;
-}
 .dirty-indicator-clean.pull-left {
   margin-right: .3em;
 }
@@ -10170,12 +9372,6 @@ ul#new-menu {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "\f00c";
-}
-.dirty-indicator-clean:before.fa-pull-left {
-  margin-right: .3em;
-}
-.dirty-indicator-clean:before.fa-pull-right {
-  margin-left: .3em;
 }
 .dirty-indicator-clean:before.pull-left {
   margin-right: .3em;
@@ -10221,132 +9417,14 @@ ul#new-menu {
     box-shadow: 0px 0px 12px 1px rgba(87, 87, 87, 0.2);
   }
 }
-.CodeMirror-dialog {
-  background-color: #fff;
-}
 /*!
 *
 * IPython notebook
 *
 */
-/* CSS font colors for translated ANSI escape sequences */
-/* The color values are a mix of
-   http://www.xcolors.net/dl/baskerville-ivorylight and
-   http://www.xcolors.net/dl/euphrasia */
-.ansi-black-fg {
-  color: #3E424D;
-}
-.ansi-black-bg {
-  background-color: #3E424D;
-}
-.ansi-black-intense-fg {
-  color: #282C36;
-}
-.ansi-black-intense-bg {
-  background-color: #282C36;
-}
-.ansi-red-fg {
-  color: #E75C58;
-}
-.ansi-red-bg {
-  background-color: #E75C58;
-}
-.ansi-red-intense-fg {
-  color: #B22B31;
-}
-.ansi-red-intense-bg {
-  background-color: #B22B31;
-}
-.ansi-green-fg {
-  color: #00A250;
-}
-.ansi-green-bg {
-  background-color: #00A250;
-}
-.ansi-green-intense-fg {
-  color: #007427;
-}
-.ansi-green-intense-bg {
-  background-color: #007427;
-}
-.ansi-yellow-fg {
-  color: #DDB62B;
-}
-.ansi-yellow-bg {
-  background-color: #DDB62B;
-}
-.ansi-yellow-intense-fg {
-  color: #B27D12;
-}
-.ansi-yellow-intense-bg {
-  background-color: #B27D12;
-}
-.ansi-blue-fg {
-  color: #208FFB;
-}
-.ansi-blue-bg {
-  background-color: #208FFB;
-}
-.ansi-blue-intense-fg {
-  color: #0065CA;
-}
-.ansi-blue-intense-bg {
-  background-color: #0065CA;
-}
-.ansi-magenta-fg {
-  color: #D160C4;
-}
-.ansi-magenta-bg {
-  background-color: #D160C4;
-}
-.ansi-magenta-intense-fg {
-  color: #A03196;
-}
-.ansi-magenta-intense-bg {
-  background-color: #A03196;
-}
-.ansi-cyan-fg {
-  color: #60C6C8;
-}
-.ansi-cyan-bg {
-  background-color: #60C6C8;
-}
-.ansi-cyan-intense-fg {
-  color: #258F8F;
-}
-.ansi-cyan-intense-bg {
-  background-color: #258F8F;
-}
-.ansi-white-fg {
-  color: #C5C1B4;
-}
-.ansi-white-bg {
-  background-color: #C5C1B4;
-}
-.ansi-white-intense-fg {
-  color: #A1A6B2;
-}
-.ansi-white-intense-bg {
-  background-color: #A1A6B2;
-}
-.ansi-default-inverse-fg {
-  color: #FFFFFF;
-}
-.ansi-default-inverse-bg {
-  background-color: #000000;
-}
-.ansi-bold {
-  font-weight: bold;
-}
-.ansi-underline {
-  text-decoration: underline;
-}
-/* The following styles are deprecated an will be removed in a future version */
+/* CSS font colors for translated ANSI colors. */
 .ansibold {
   font-weight: bold;
-}
-.ansi-inverse {
-  outline: 0.5px dotted;
 }
 /* use dark versions for foreground, to improve visibility */
 .ansiblack {
@@ -10425,20 +9503,12 @@ div.cell {
   /* This acts as a spacer between cells, that is outside the border */
   margin: 0px;
   outline: none;
-  position: relative;
-  overflow: visible;
-}
-div.cell:before {
-  position: absolute;
-  display: block;
-  top: -1px;
-  left: -1px;
-  width: 5px;
-  height: calc(100% +  2px);
-  content: '';
-  background: transparent;
+  border-left-width: 1px;
+  padding-left: 5px;
+  background: linear-gradient(to right, transparent -40px, transparent 1px, transparent 1px, transparent 100%);
 }
 div.cell.jupyter-soft-selected {
+  border-left-color: #90CAF9;
   border-left-color: #E3F2FD;
   border-left-width: 1px;
   padding-left: 5px;
@@ -10451,39 +9521,27 @@ div.cell.jupyter-soft-selected {
     border-color: transparent;
   }
 }
-div.cell.selected,
-div.cell.selected.jupyter-soft-selected {
+div.cell.selected {
   border-color: #ababab;
-}
-div.cell.selected:before,
-div.cell.selected.jupyter-soft-selected:before {
-  position: absolute;
-  display: block;
-  top: -1px;
-  left: -1px;
-  width: 5px;
-  height: calc(100% +  2px);
-  content: '';
-  background: #42A5F5;
+  border-left-width: 0px;
+  padding-left: 6px;
+  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 5px, transparent 5px, transparent 100%);
 }
 @media print {
-  div.cell.selected,
-  div.cell.selected.jupyter-soft-selected {
+  div.cell.selected {
     border-color: transparent;
   }
 }
+div.cell.selected.jupyter-soft-selected {
+  border-left-width: 0;
+  padding-left: 6px;
+  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 7px, #E3F2FD 7px, #E3F2FD 100%);
+}
 .edit_mode div.cell.selected {
   border-color: #66BB6A;
-}
-.edit_mode div.cell.selected:before {
-  position: absolute;
-  display: block;
-  top: -1px;
-  left: -1px;
-  width: 5px;
-  height: calc(100% +  2px);
-  content: '';
-  background: #66BB6A;
+  border-left-width: 0px;
+  padding-left: 6px;
+  background: linear-gradient(to right, #66BB6A -40px, #66BB6A 5px, transparent 5px, transparent 100%);
 }
 @media print {
   .edit_mode div.cell.selected {
@@ -10679,9 +9737,7 @@ div.input_area > div.highlight > pre {
 .CodeMirror-lines {
   /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
   /* we have set a different line-height and want this to scale with that. */
-  /* Note that this should set vertical padding only, since CodeMirror assumes
-       that horizontal padding will be set on CodeMirror pre */
-  padding: 0.4em 0;
+  padding: 0.4em;
 }
 .CodeMirror-linenumber {
   padding: 0 8px 0 4px;
@@ -10691,24 +9747,11 @@ div.input_area > div.highlight > pre {
   border-top-left-radius: 2px;
 }
 .CodeMirror pre {
-  /* In CM3 this went to 4px from 0 in CM2. This sets horizontal padding only,
-    use .CodeMirror-lines for vertical */
-  padding: 0 0.4em;
+  /* In CM3 this went to 4px from 0 in CM2. We need the 0 value because of how we size */
+  /* .CodeMirror-lines */
+  padding: 0;
   border: 0;
   border-radius: 0;
-}
-.CodeMirror-cursor {
-  border-left: 1.4px solid black;
-}
-@media screen and (min-width: 2138px) and (max-width: 4319px) {
-  .CodeMirror-cursor {
-    border-left: 2px solid black;
-  }
-}
-@media screen and (min-width: 4320px) {
-  .CodeMirror-cursor {
-    border-left: 4px solid black;
-  }
 }
 /*
 
@@ -10962,9 +10005,6 @@ div.output_area img.unconfined,
 div.output_area svg.unconfined {
   max-width: none;
 }
-div.output_area .mglyph > img {
-  max-width: none;
-}
 /* This is needed to protect the pre formating from global settings such
    as that of bootstrap */
 .output {
@@ -11003,7 +10043,7 @@ div.output_area .mglyph > img {
 }
 div.output_area pre {
   margin: 0;
-  padding: 1px 0 1px 0;
+  padding: 0;
   border: 0;
   vertical-align: baseline;
   color: black;
@@ -11163,35 +10203,39 @@ div.output_unrecognized a:hover {
 .rendered_html h6:first-child {
   margin-top: 1em;
 }
-.rendered_html ul:not(.list-inline),
-.rendered_html ol:not(.list-inline) {
-  padding-left: 2em;
-}
 .rendered_html ul {
   list-style: disc;
+  margin: 0em 2em;
+  padding-left: 0px;
 }
 .rendered_html ul ul {
   list-style: square;
-  margin-top: 0;
+  margin: 0em 2em;
 }
 .rendered_html ul ul ul {
   list-style: circle;
+  margin: 0em 2em;
 }
 .rendered_html ol {
   list-style: decimal;
+  margin: 0em 2em;
+  padding-left: 0px;
 }
 .rendered_html ol ol {
   list-style: upper-alpha;
-  margin-top: 0;
+  margin: 0em 2em;
 }
 .rendered_html ol ol ol {
   list-style: lower-alpha;
+  margin: 0em 2em;
 }
 .rendered_html ol ol ol ol {
   list-style: lower-roman;
+  margin: 0em 2em;
 }
 .rendered_html ol ol ol ol ol {
   list-style: decimal;
+  margin: 0em 2em;
 }
 .rendered_html * + ul {
   margin-top: 1em;
@@ -11205,23 +10249,14 @@ div.output_unrecognized a:hover {
 }
 .rendered_html pre {
   margin: 1em 2em;
-  padding: 0px;
-  background-color: #fff;
-}
-.rendered_html code {
-  background-color: #eff0f1;
-}
-.rendered_html p code {
-  padding: 1px 5px;
-}
-.rendered_html pre code {
-  background-color: #fff;
 }
 .rendered_html pre,
 .rendered_html code {
   border: 0;
+  background-color: #fff;
   color: #000;
   font-size: 100%;
+  padding: 0px;
 }
 .rendered_html blockquote {
   margin: 1em 2em;
@@ -11229,36 +10264,24 @@ div.output_unrecognized a:hover {
 .rendered_html table {
   margin-left: auto;
   margin-right: auto;
-  border: none;
+  border: 1px solid black;
   border-collapse: collapse;
-  border-spacing: 0;
-  color: black;
-  font-size: 12px;
-  table-layout: fixed;
-}
-.rendered_html thead {
-  border-bottom: 1px solid black;
-  vertical-align: bottom;
 }
 .rendered_html tr,
 .rendered_html th,
 .rendered_html td {
-  text-align: right;
+  border: 1px solid black;
+  border-collapse: collapse;
+  margin: 1em 2em;
+}
+.rendered_html td,
+.rendered_html th {
+  text-align: left;
   vertical-align: middle;
-  padding: 0.5em 0.5em;
-  line-height: normal;
-  white-space: normal;
-  max-width: none;
-  border: none;
+  padding: 4px;
 }
 .rendered_html th {
   font-weight: bold;
-}
-.rendered_html tbody tr:nth-child(odd) {
-  background: #f5f5f5;
-}
-.rendered_html tbody tr:hover {
-  background: rgba(66, 165, 245, 0.2);
 }
 .rendered_html * + table {
   margin-top: 1em;
@@ -11285,15 +10308,6 @@ div.output_unrecognized a:hover {
 .rendered_html img.unconfined,
 .rendered_html svg.unconfined {
   max-width: none;
-}
-.rendered_html .alert {
-  margin-bottom: initial;
-}
-.rendered_html * + .alert {
-  margin-top: 1em;
-}
-[dir="rtl"] .rendered_html p {
-  text-align: right;
 }
 div.text_cell {
   /* Old browsers */
@@ -11348,17 +10362,8 @@ h6:hover .anchor-link {
   overflow-x: auto;
   overflow-y: hidden;
 }
-.text_cell.rendered .rendered_html tr,
-.text_cell.rendered .rendered_html th,
-.text_cell.rendered .rendered_html td {
-  max-width: none;
-}
 .text_cell.unrendered .text_cell_render {
   display: none;
-}
-.text_cell .dropzone .input_area {
-  border: 2px dashed #bababa;
-  margin: -1px;
 }
 .cm-header-1,
 .cm-header-2,
@@ -11495,28 +10500,6 @@ kbd {
   padding-top: 1px;
   padding-bottom: 1px;
 }
-.jupyter-keybindings {
-  padding: 1px;
-  line-height: 24px;
-  border-bottom: 1px solid gray;
-}
-.jupyter-keybindings input {
-  margin: 0;
-  padding: 0;
-  border: none;
-}
-.jupyter-keybindings i {
-  padding: 6px;
-}
-.well code {
-  background-color: #ffffff;
-  border-color: #ababab;
-  border-width: 1px;
-  border-style: solid;
-  padding: 2px;
-  padding-top: 1px;
-  padding-bottom: 1px;
-}
 /* CSS for the cell toolbar */
 .celltoolbar {
   border: thin solid #CFCFCF;
@@ -11649,152 +10632,6 @@ select[multiple].celltoolbar select {
   margin-left: 5px;
   margin-right: 5px;
 }
-.tags_button_container {
-  width: 100%;
-  display: flex;
-}
-.tag-container {
-  display: flex;
-  flex-direction: row;
-  flex-grow: 1;
-  overflow: hidden;
-  position: relative;
-}
-.tag-container > * {
-  margin: 0 4px;
-}
-.remove-tag-btn {
-  margin-left: 4px;
-}
-.tags-input {
-  display: flex;
-}
-.cell-tag:last-child:after {
-  content: "";
-  position: absolute;
-  right: 0;
-  width: 40px;
-  height: 100%;
-  /* Fade to background color of cell toolbar */
-  background: linear-gradient(to right, rgba(0, 0, 0, 0), #EEE);
-}
-.tags-input > * {
-  margin-left: 4px;
-}
-.cell-tag,
-.tags-input input,
-.tags-input button {
-  display: block;
-  width: 100%;
-  height: 32px;
-  padding: 6px 12px;
-  font-size: 13px;
-  line-height: 1.42857143;
-  color: #555555;
-  background-color: #fff;
-  background-image: none;
-  border: 1px solid #ccc;
-  border-radius: 2px;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-  height: 30px;
-  padding: 5px 10px;
-  font-size: 12px;
-  line-height: 1.5;
-  border-radius: 1px;
-  box-shadow: none;
-  width: inherit;
-  font-size: inherit;
-  height: 22px;
-  line-height: 22px;
-  padding: 0px 4px;
-  display: inline-block;
-}
-.cell-tag:focus,
-.tags-input input:focus,
-.tags-input button:focus {
-  border-color: #66afe9;
-  outline: 0;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
-  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
-}
-.cell-tag::-moz-placeholder,
-.tags-input input::-moz-placeholder,
-.tags-input button::-moz-placeholder {
-  color: #999;
-  opacity: 1;
-}
-.cell-tag:-ms-input-placeholder,
-.tags-input input:-ms-input-placeholder,
-.tags-input button:-ms-input-placeholder {
-  color: #999;
-}
-.cell-tag::-webkit-input-placeholder,
-.tags-input input::-webkit-input-placeholder,
-.tags-input button::-webkit-input-placeholder {
-  color: #999;
-}
-.cell-tag::-ms-expand,
-.tags-input input::-ms-expand,
-.tags-input button::-ms-expand {
-  border: 0;
-  background-color: transparent;
-}
-.cell-tag[disabled],
-.tags-input input[disabled],
-.tags-input button[disabled],
-.cell-tag[readonly],
-.tags-input input[readonly],
-.tags-input button[readonly],
-fieldset[disabled] .cell-tag,
-fieldset[disabled] .tags-input input,
-fieldset[disabled] .tags-input button {
-  background-color: #eeeeee;
-  opacity: 1;
-}
-.cell-tag[disabled],
-.tags-input input[disabled],
-.tags-input button[disabled],
-fieldset[disabled] .cell-tag,
-fieldset[disabled] .tags-input input,
-fieldset[disabled] .tags-input button {
-  cursor: not-allowed;
-}
-textarea.cell-tag,
-textarea.tags-input input,
-textarea.tags-input button {
-  height: auto;
-}
-select.cell-tag,
-select.tags-input input,
-select.tags-input button {
-  height: 30px;
-  line-height: 30px;
-}
-textarea.cell-tag,
-textarea.tags-input input,
-textarea.tags-input button,
-select[multiple].cell-tag,
-select[multiple].tags-input input,
-select[multiple].tags-input button {
-  height: auto;
-}
-.cell-tag,
-.tags-input button {
-  padding: 0px 4px;
-}
-.cell-tag {
-  background-color: #fff;
-  white-space: nowrap;
-}
-.tags-input input[type=text]:focus {
-  outline: none;
-  box-shadow: none;
-  border-color: #ccc;
-}
 .completions {
   position: absolute;
   z-index: 110;
@@ -11820,28 +10657,16 @@ select[multiple].tags-input button {
 .completions select option.context {
   color: #286090;
 }
+#kernel_logo_widget {
+  float: right !important;
+  float: right;
+}
 #kernel_logo_widget .current_kernel_logo {
   display: none;
   margin-top: -1px;
   margin-bottom: -1px;
   width: 32px;
   height: 32px;
-}
-[dir="rtl"] #kernel_logo_widget {
-  float: left !important;
-  float: left;
-}
-.modal .modal-body .move-path {
-  display: flex;
-  flex-direction: row;
-  justify-content: space;
-  align-items: center;
-}
-.modal .modal-body .move-path .server-root {
-  padding-right: 20px;
-}
-.modal .modal-body .move-path .path-input {
-  flex: 1;
 }
 #menubar {
   box-sizing: border-box;
@@ -11863,41 +10688,11 @@ select[multiple].tags-input button {
 #menubar .navbar-collapse {
   clear: left;
 }
-[dir="rtl"] #menubar .navbar-toggle {
-  float: right;
-}
-[dir="rtl"] #menubar .navbar-collapse {
-  clear: right;
-}
-[dir="rtl"] #menubar .navbar-nav {
-  float: right;
-}
-[dir="rtl"] #menubar .nav {
-  padding-right: 0px;
-}
-[dir="rtl"] #menubar .navbar-nav > li {
-  float: right;
-}
-[dir="rtl"] #menubar .navbar-right {
-  float: left !important;
-}
-[dir="rtl"] ul.dropdown-menu {
-  text-align: right;
-  left: auto;
-}
-[dir="rtl"] ul#new-menu.dropdown-menu {
-  right: auto;
-  left: 0;
-}
 .nav-wrapper {
   border-bottom: 1px solid #e7e7e7;
 }
 i.menu-icon {
   padding-top: 4px;
-}
-[dir="rtl"] i.menu-icon.pull-right {
-  float: left !important;
-  float: left;
 }
 ul#help_menu li a {
   overflow: hidden;
@@ -11905,17 +10700,6 @@ ul#help_menu li a {
 }
 ul#help_menu li a i {
   margin-right: -1.2em;
-}
-[dir="rtl"] ul#help_menu li a {
-  padding-left: 2.2em;
-}
-[dir="rtl"] ul#help_menu li a i {
-  margin-right: 0;
-  margin-left: -1.2em;
-}
-[dir="rtl"] ul#help_menu li a i.pull-right {
-  float: left !important;
-  float: left;
 }
 .dropdown-submenu {
   position: relative;
@@ -11925,10 +10709,6 @@ ul#help_menu li a i {
   left: 100%;
   margin-top: -6px;
   margin-left: -1px;
-}
-[dir="rtl"] .dropdown-submenu > .dropdown-menu {
-  right: 100%;
-  margin-right: -1px;
 }
 .dropdown-submenu:hover > .dropdown-menu {
   display: block;
@@ -11947,23 +10727,11 @@ ul#help_menu li a i {
   margin-top: 2px;
   margin-right: -10px;
 }
-.dropdown-submenu > a:after.fa-pull-left {
-  margin-right: .3em;
-}
-.dropdown-submenu > a:after.fa-pull-right {
-  margin-left: .3em;
-}
 .dropdown-submenu > a:after.pull-left {
   margin-right: .3em;
 }
 .dropdown-submenu > a:after.pull-right {
   margin-left: .3em;
-}
-[dir="rtl"] .dropdown-submenu > a:after {
-  float: left;
-  content: "\f0d9";
-  margin-right: 0;
-  margin-left: -10px;
 }
 .dropdown-submenu:hover > a:after {
   color: #262626;
@@ -11980,10 +10748,6 @@ ul#help_menu li a i {
   float: right;
   z-index: 10;
 }
-[dir="rtl"] #notification_area {
-  float: left !important;
-  float: left;
-}
 .indicator_area {
   float: right !important;
   float: right;
@@ -11994,10 +10758,6 @@ ul#help_menu li a i {
   z-index: 10;
   text-align: center;
   width: auto;
-}
-[dir="rtl"] .indicator_area {
-  float: left !important;
-  float: left;
 }
 #kernel_indicator {
   float: right !important;
@@ -12015,12 +10775,6 @@ ul#help_menu li a i {
   padding-left: 5px;
   padding-right: 5px;
 }
-[dir="rtl"] #kernel_indicator {
-  float: left !important;
-  float: left;
-  border-left: 0;
-  border-right: 1px solid;
-}
 #modal_indicator {
   float: right !important;
   float: right;
@@ -12031,10 +10785,6 @@ ul#help_menu li a i {
   z-index: 10;
   text-align: center;
   width: auto;
-}
-[dir="rtl"] #modal_indicator {
-  float: left !important;
-  float: left;
 }
 #readonly-indicator {
   float: right !important;
@@ -12065,12 +10815,6 @@ ul#help_menu li a i {
   -moz-osx-font-smoothing: grayscale;
   content: "\f040";
 }
-.edit_mode .modal_indicator:before.fa-pull-left {
-  margin-right: .3em;
-}
-.edit_mode .modal_indicator:before.fa-pull-right {
-  margin-left: .3em;
-}
 .edit_mode .modal_indicator:before.pull-left {
   margin-right: .3em;
 }
@@ -12085,12 +10829,6 @@ ul#help_menu li a i {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: ' ';
-}
-.command_mode .modal_indicator:before.fa-pull-left {
-  margin-right: .3em;
-}
-.command_mode .modal_indicator:before.fa-pull-right {
-  margin-left: .3em;
 }
 .command_mode .modal_indicator:before.pull-left {
   margin-right: .3em;
@@ -12107,12 +10845,6 @@ ul#help_menu li a i {
   -moz-osx-font-smoothing: grayscale;
   content: "\f10c";
 }
-.kernel_idle_icon:before.fa-pull-left {
-  margin-right: .3em;
-}
-.kernel_idle_icon:before.fa-pull-right {
-  margin-left: .3em;
-}
 .kernel_idle_icon:before.pull-left {
   margin-right: .3em;
 }
@@ -12127,12 +10859,6 @@ ul#help_menu li a i {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "\f111";
-}
-.kernel_busy_icon:before.fa-pull-left {
-  margin-right: .3em;
-}
-.kernel_busy_icon:before.fa-pull-right {
-  margin-left: .3em;
 }
 .kernel_busy_icon:before.pull-left {
   margin-right: .3em;
@@ -12149,12 +10875,6 @@ ul#help_menu li a i {
   -moz-osx-font-smoothing: grayscale;
   content: "\f1e2";
 }
-.kernel_dead_icon:before.fa-pull-left {
-  margin-right: .3em;
-}
-.kernel_dead_icon:before.fa-pull-right {
-  margin-left: .3em;
-}
 .kernel_dead_icon:before.pull-left {
   margin-right: .3em;
 }
@@ -12169,12 +10889,6 @@ ul#help_menu li a i {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "\f127";
-}
-.kernel_disconnected_icon:before.fa-pull-left {
-  margin-right: .3em;
-}
-.kernel_disconnected_icon:before.fa-pull-right {
-  margin-left: .3em;
 }
 .kernel_disconnected_icon:before.pull-left {
   margin-right: .3em;
@@ -12565,46 +11279,27 @@ div#pager .ui-resizable-handle::after {
   flex: 1;
 }
 span.save_widget {
-  height: 30px;
-  margin-top: 4px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: baseline;
-  width: 50%;
-  flex: 1;
+  margin-top: 6px;
 }
 span.save_widget span.filename {
-  height: 100%;
+  height: 1em;
   line-height: 1em;
+  padding: 3px;
   margin-left: 16px;
   border: none;
   font-size: 146.5%;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
   border-radius: 2px;
 }
 span.save_widget span.filename:hover {
   background-color: #e6e6e6;
 }
-[dir="rtl"] span.save_widget.pull-left {
-  float: right !important;
-  float: right;
-}
-[dir="rtl"] span.save_widget span.filename {
-  margin-left: 0;
-  margin-right: 16px;
-}
 span.checkpoint_status,
 span.autosave_status {
   font-size: small;
-  white-space: nowrap;
-  padding: 0 5px;
 }
 @media (max-width: 767px) {
   span.save_widget {
     font-size: small;
-    padding: 0 0 0 5px;
   }
   span.checkpoint_status,
   span.autosave_status {
@@ -12648,9 +11343,6 @@ span.autosave_status {
   margin-top: 0px;
   margin-left: 5px;
 }
-.toolbar-btn-label {
-  margin-left: 6px;
-}
 #maintoolbar {
   margin-bottom: -3px;
   margin-top: -8px;
@@ -12670,10 +11362,6 @@ span.autosave_status {
 }
 .select-xs {
   height: 24px;
-}
-[dir="rtl"] .btn-group > .btn,
-.btn-group-vertical > .btn {
-  float: right;
 }
 .pulse,
 .dropdown-menu > li > a.pulse,
@@ -12824,10 +11512,6 @@ ul.typeahead-list i {
   margin-left: -10px;
   width: 18px;
 }
-[dir="rtl"] ul.typeahead-list i {
-  margin-left: 0;
-  margin-right: -10px;
-}
 ul.typeahead-list {
   max-height: 80vh;
   overflow: auto;
@@ -12836,13 +11520,6 @@ ul.typeahead-list > li > a {
   /** Firefox bug **/
   /* see https://github.com/jupyter/notebook/issues/559 */
   white-space: normal;
-}
-ul.typeahead-list  > li > a.pull-right {
-  float: left !important;
-  float: left;
-}
-[dir="rtl"] .typeahead-list {
-  text-align: right;
 }
 .cmd-palette .modal-body {
   padding: 7px;
@@ -12854,19 +11531,10 @@ ul.typeahead-list  > li > a.pull-right {
   outline: none;
 }
 .no-shortcut {
-  min-width: 20px;
-  color: transparent;
-}
-[dir="rtl"] .no-shortcut.pull-right {
-  float: left !important;
-  float: left;
-}
-[dir="rtl"] .command-shortcut.pull-right {
-  float: left !important;
-  float: left;
+  display: none;
 }
 .command-shortcut:before {
-  content: "(command mode)";
+  content: "(command)";
   padding-right: 3px;
   color: #777777;
 }
@@ -12875,10 +11543,6 @@ ul.typeahead-list  > li > a.pull-right {
   padding-right: 3px;
   color: #777777;
 }
-[dir="rtl"] .edit-shortcut.pull-right {
-  float: left !important;
-  float: left;
-}
 #find-and-replace #replace-preview .match,
 #find-and-replace #replace-preview .insert {
   background-color: #BBDEFB;
@@ -12886,12 +11550,6 @@ ul.typeahead-list  > li > a.pull-right {
   border-style: solid;
   border-width: 1px;
   border-radius: 0px;
-}
-[dir="ltr"] #find-and-replace .input-group-btn + .form-control {
-  border-left: none;
-}
-[dir="rtl"] #find-and-replace .input-group-btn + .form-control {
-  border-right: none;
 }
 #find-and-replace #replace-preview .replace .match {
   background-color: #FFCDD2;
@@ -12947,8 +11605,13 @@ ul.typeahead-list  > li > a.pull-right {
 /*# sourceMappingURL=style.min.css.map */
     </style>
 <style type="text/css">
-    .highlight .hll { background-color: #ffffcc }
-.highlight  { background: #f8f8f8; }
+    pre { line-height: 125%; margin: 0; }
+td.linenos pre { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
+td.linenos pre.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+.highlight .hll { background-color: #ffffcc }
+.highlight { background: #f8f8f8; }
 .highlight .c { color: #408080; font-style: italic } /* Comment */
 .highlight .err { border: 1px solid #FF0000 } /* Error */
 .highlight .k { color: #008000; font-weight: bold } /* Keyword */
@@ -13017,6 +11680,45 @@ ul.typeahead-list  > li > a.pull-right {
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
+<style type="text/css">
+    
+/* Temporary definitions which will become obsolete with Notebook release 5.0 */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-bold { font-weight: bold; }
+
+    </style>
 
 
 <style type="text/css">
@@ -13050,7 +11752,7 @@ div#notebook {
 
 <!-- Loading mathjax macro -->
 <!-- Load mathjax -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
     <!-- MathJax configuration -->
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -13075,62 +11777,55 @@ div#notebook {
     <div class="container" id="notebook-container">
 
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="1.-VS-Code&#32534;&#31243;&#29615;&#22659;&#25645;&#24314;">1. VS Code&#32534;&#31243;&#29615;&#22659;&#25645;&#24314;<a class="anchor-link" href="#1.-VS-Code&#32534;&#31243;&#29615;&#22659;&#25645;&#24314;">&#182;</a></h1><h2 id="1.1-VS-Code-&#19979;C/C++&#32534;&#31243;">1.1 VS Code &#19979;C/C++&#32534;&#31243;<a class="anchor-link" href="#1.1-VS-Code-&#19979;C/C++&#32534;&#31243;">&#182;</a></h2><h3 id="1.1.1-&#23433;&#35013;">1.1.1 &#23433;&#35013;<a class="anchor-link" href="#1.1.1-&#23433;&#35013;">&#182;</a></h3><ol>
 <li>下载安装VS Code。  </li>
 <li>解压缩mingw64， 把mingw64/bin加入到环境变量的系统变量的PATH中  </li>
-<li>下载CMAKE，并安装  </li>
-<li>运行cmd，cd Desktop ，mkdir project， cd project， mkdir helloworld， cd helloworld, code   </li>
-<li>VS Code 安装插件 C/C++ 、 Cmake tools插件,CMake langage support for Visual Studio Code插件，Markdown All in One插件  </li>
-<li>参考文献 <a href="https://code.visualstudio.com/docs/cpp/CMake-linux">https://code.visualstudio.com/docs/cpp/CMake-linux</a> 进行工作   </li>
+<li>下载CMAKE，并安装    </li>
+<li>VS Code 安装插件 C/C++ 、 Cmake tools插件,CMake langage support for Visual Studio Code插件，Markdown All in One插件    </li>
 </ol>
-<h3 id="1.1.2-&#21442;&#32771;&#25991;&#29486;&#65306;">1.1.2 &#21442;&#32771;&#25991;&#29486;&#65306;<a class="anchor-link" href="#1.1.2-&#21442;&#32771;&#25991;&#29486;&#65306;">&#182;</a></h3><ol>
-<li><a href="https://code.visualstudio.com/docs/cpp/config-mingw">https://code.visualstudio.com/docs/cpp/config-mingw</a></li>
-<li><a href="https://code.visualstudio.com/docs/cpp/CMake-linux">https://code.visualstudio.com/docs/cpp/CMake-linux</a></li>
+<h3 id="1.1.2-&#31532;&#19968;&#20010;C/C++&#31243;&#24207;">1.1.2 &#31532;&#19968;&#20010;C/C++&#31243;&#24207;<a class="anchor-link" href="#1.1.2-&#31532;&#19968;&#20010;C/C++&#31243;&#24207;">&#182;</a></h3><ol>
+<li>从<a href="https://github.com/guangyubin/SmartHealth">https://github.com/guangyubin/SmartHealth</a> 下载课件，解压缩到某个目录</li>
+<li>smartHealth分为ccode，python，doc，data四个文件夹</li>
+<li>在ccode目录下有test,ecglib,wfdb四个三个文件夹</li>
+<li>在vccode中打开文件夹smartHealth文件夹</li>
+<li><p>在smarthealth文件甲下新建CMakeLists.txt文件，写入如下代码</p>
+
+<pre><code> cmake_minimum_required(VERSION 3.0.0)
+ project(SMARTHEALTH VERSION 0.1.0)
+ add_subdirectory(ccode)</code></pre>
+</li>
+<li>在ccode文件夹下，新建CMakeLists.txt文件，写入如下代码</li>
+<li>在test文件夹下，新建main.cpp文件，写入如下代码
+```
+#include <iostream>
+#include "ecglib.h"</li>
 </ol>
-<h3 id="1.1.3-&#20316;&#19994;">1.1.3 &#20316;&#19994;<a class="anchor-link" href="#1.1.3-&#20316;&#19994;">&#182;</a></h3><p>目录组成</p>
+<p>int main(int, char**) {
+    std::cout &lt;&lt; "Hello, world!\n" ; 
+}</p>
 
-<pre><code>:.
-└─SmartHealth
-    ├─DATA
-    │  └─mitbd
-    ├─DOC
-    │  └─pic
-    ├─ECG_CP
-    │  ├─.vscode
-    │  └─ecglib
-    └─ECG_PY
-        └─.vscode</code></pre>
-<p>编写CMAKE文件，利用mingw编译。</p>
+<pre><code>8. 点击生成，运行。
+输出结果
+Hello, world!  
 
-<pre><code>// ECG_CP/main.cpp
-#include &lt;iostream&gt;
-#include "ecglib.h"
+### 1.1.3 参考文献：  
+1. [mingw配置]( https://code.visualstudio.com/docs/cpp/config-mingw)  
+2. [Cmake配置](https://code.visualstudio.com/docs/cpp/CMake-linux)
+3. [Cmake使用 ](http://phonzia.github.io/2015/12/CMake)
 
-int main(int, char**) {
-    std::cout &lt;&lt; "Hello, world!\n" ;
-    InitEcglib();
-}</code></pre>
-
-<pre><code>//ECG_CP/ecglib/ecglib.cpp
-#include "ecglib.h"
-#include &lt;iostream&gt;
-using namespace std;
-bool InitEcglib()
-{
-    cout &lt;&lt; "ECGLIB Init " &lt;&lt;endl;
-    return false;
-}</code></pre>
-<p>输出结果
-Hello, world!   ECGLIB Init</p>
-<h2 id="1.2-VS-Code-&#19979;Python&#32534;&#31243;">1.2 VS Code &#19979;Python&#32534;&#31243;<a class="anchor-link" href="#1.2-VS-Code-&#19979;Python&#32534;&#31243;">&#182;</a></h2><h3 id="1.2.1-&#23433;&#35013;">1.2.1 &#23433;&#35013;<a class="anchor-link" href="#1.2.1-&#23433;&#35013;">&#182;</a></h3><ol>
-<li>安装Python</li>
-<li>安装Python插件</li>
-<li>修改pip路径
-<pre><code>pip install pip -U
-pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple</code></pre>
-<!--  --></li>
+## 1.2 VS Code 下Python编程
+### 1.2.1 安装
+1. 安装Python
+2. 安装Python插件
+3. 修改pip路径</code></pre>
+<p>pip install pip -U
+pip config set global.index-url <a href="https://pypi.tuna.tsinghua.edu.cn/simple">https://pypi.tuna.tsinghua.edu.cn/simple</a>
+ ```<br>
+<!--  --></p>
+<ol>
 <li>安装Anaconda，修改Anaconda的环境变量</li>
 <li>新建一个虚拟环境  conda create -n myevn --clone base</li>
 <li>有可能需要初始化conda ：Conda init </li>
@@ -13146,14 +11841,14 @@ C:\ProgramData\Anaconda3\condabin\</li>
 <li>在上面可以看到变量</li>
 <li>可以导出为xml格式的文件，可以用于打印</li>
 </ol>
-<h4 id="1.2.3-&#20316;&#19994;">1.2.3 &#20316;&#19994;<a class="anchor-link" href="#1.2.3-&#20316;&#19994;">&#182;</a></h4><p>在notebook下实现下面的代码，导出为xml文件</p>
+<h4 id="1.2.3-&#20351;&#29992;&#31034;&#33539;">1.2.3 &#20351;&#29992;&#31034;&#33539;<a class="anchor-link" href="#1.2.3-&#20351;&#29992;&#31034;&#33539;">&#182;</a></h4><p>在notebook下实现下面的代码，导出为xml文件。</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -13164,7 +11859,7 @@ C:\ProgramData\Anaconda3\condabin\</li>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 
-    </div>
+</div>
 </div>
 </div>
 
@@ -13174,476 +11869,15 @@ C:\ProgramData\Anaconda3\condabin\</li>
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+<div class="prompt"></div>
 
 
 
-<div class="output_svg output_subarea ">
-<?xml version="1.0" encoding="utf-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
-  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Created with matplotlib (https://matplotlib.org/) -->
-<svg height="248.518125pt" version="1.1" viewBox="0 0 377.304687 248.518125" width="377.304687pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
- <defs>
-  <style type="text/css">
-*{stroke-linecap:butt;stroke-linejoin:round;}
-  </style>
- </defs>
- <g id="figure_1">
-  <g id="patch_1">
-   <path d="M 0 248.518125 
-L 377.304687 248.518125 
-L 377.304687 0 
-L 0 0 
-z
-" style="fill:none;"/>
-  </g>
-  <g id="axes_1">
-   <g id="patch_2">
-    <path d="M 35.304688 224.64 
-L 370.104688 224.64 
-L 370.104688 7.2 
-L 35.304688 7.2 
-z
-" style="fill:#ffffff;"/>
-   </g>
-   <g id="matplotlib.axis_1">
-    <g id="xtick_1">
-     <g id="line2d_1">
-      <defs>
-       <path d="M 0 0 
-L 0 3.5 
-" id="me592c1e7e3" style="stroke:#000000;stroke-width:0.8;"/>
-      </defs>
-      <g>
-       <use style="stroke:#000000;stroke-width:0.8;" x="50.522869" xlink:href="#me592c1e7e3" y="224.64"/>
-      </g>
-     </g>
-     <g id="text_1">
-      <!-- −5.0 -->
-      <defs>
-       <path d="M 10.59375 35.5 
-L 73.1875 35.5 
-L 73.1875 27.203125 
-L 10.59375 27.203125 
-z
-" id="DejaVuSans-8722"/>
-       <path d="M 10.796875 72.90625 
-L 49.515625 72.90625 
-L 49.515625 64.59375 
-L 19.828125 64.59375 
-L 19.828125 46.734375 
-Q 21.96875 47.46875 24.109375 47.828125 
-Q 26.265625 48.1875 28.421875 48.1875 
-Q 40.625 48.1875 47.75 41.5 
-Q 54.890625 34.8125 54.890625 23.390625 
-Q 54.890625 11.625 47.5625 5.09375 
-Q 40.234375 -1.421875 26.90625 -1.421875 
-Q 22.3125 -1.421875 17.546875 -0.640625 
-Q 12.796875 0.140625 7.71875 1.703125 
-L 7.71875 11.625 
-Q 12.109375 9.234375 16.796875 8.0625 
-Q 21.484375 6.890625 26.703125 6.890625 
-Q 35.15625 6.890625 40.078125 11.328125 
-Q 45.015625 15.765625 45.015625 23.390625 
-Q 45.015625 31 40.078125 35.4375 
-Q 35.15625 39.890625 26.703125 39.890625 
-Q 22.75 39.890625 18.8125 39.015625 
-Q 14.890625 38.140625 10.796875 36.28125 
-z
-" id="DejaVuSans-53"/>
-       <path d="M 10.6875 12.40625 
-L 21 12.40625 
-L 21 0 
-L 10.6875 0 
-z
-" id="DejaVuSans-46"/>
-       <path d="M 31.78125 66.40625 
-Q 24.171875 66.40625 20.328125 58.90625 
-Q 16.5 51.421875 16.5 36.375 
-Q 16.5 21.390625 20.328125 13.890625 
-Q 24.171875 6.390625 31.78125 6.390625 
-Q 39.453125 6.390625 43.28125 13.890625 
-Q 47.125 21.390625 47.125 36.375 
-Q 47.125 51.421875 43.28125 58.90625 
-Q 39.453125 66.40625 31.78125 66.40625 
-z
-M 31.78125 74.21875 
-Q 44.046875 74.21875 50.515625 64.515625 
-Q 56.984375 54.828125 56.984375 36.375 
-Q 56.984375 17.96875 50.515625 8.265625 
-Q 44.046875 -1.421875 31.78125 -1.421875 
-Q 19.53125 -1.421875 13.0625 8.265625 
-Q 6.59375 17.96875 6.59375 36.375 
-Q 6.59375 54.828125 13.0625 64.515625 
-Q 19.53125 74.21875 31.78125 74.21875 
-z
-" id="DejaVuSans-48"/>
-      </defs>
-      <g transform="translate(38.381463 239.238437)scale(0.1 -0.1)">
-       <use xlink:href="#DejaVuSans-8722"/>
-       <use x="83.789062" xlink:href="#DejaVuSans-53"/>
-       <use x="147.412109" xlink:href="#DejaVuSans-46"/>
-       <use x="179.199219" xlink:href="#DejaVuSans-48"/>
-      </g>
-     </g>
-    </g>
-    <g id="xtick_2">
-     <g id="line2d_2">
-      <g>
-       <use style="stroke:#000000;stroke-width:0.8;" x="88.759507" xlink:href="#me592c1e7e3" y="224.64"/>
-      </g>
-     </g>
-     <g id="text_2">
-      <!-- −2.5 -->
-      <defs>
-       <path d="M 19.1875 8.296875 
-L 53.609375 8.296875 
-L 53.609375 0 
-L 7.328125 0 
-L 7.328125 8.296875 
-Q 12.9375 14.109375 22.625 23.890625 
-Q 32.328125 33.6875 34.8125 36.53125 
-Q 39.546875 41.84375 41.421875 45.53125 
-Q 43.3125 49.21875 43.3125 52.78125 
-Q 43.3125 58.59375 39.234375 62.25 
-Q 35.15625 65.921875 28.609375 65.921875 
-Q 23.96875 65.921875 18.8125 64.3125 
-Q 13.671875 62.703125 7.8125 59.421875 
-L 7.8125 69.390625 
-Q 13.765625 71.78125 18.9375 73 
-Q 24.125 74.21875 28.421875 74.21875 
-Q 39.75 74.21875 46.484375 68.546875 
-Q 53.21875 62.890625 53.21875 53.421875 
-Q 53.21875 48.921875 51.53125 44.890625 
-Q 49.859375 40.875 45.40625 35.40625 
-Q 44.1875 33.984375 37.640625 27.21875 
-Q 31.109375 20.453125 19.1875 8.296875 
-z
-" id="DejaVuSans-50"/>
-      </defs>
-      <g transform="translate(76.618101 239.238437)scale(0.1 -0.1)">
-       <use xlink:href="#DejaVuSans-8722"/>
-       <use x="83.789062" xlink:href="#DejaVuSans-50"/>
-       <use x="147.412109" xlink:href="#DejaVuSans-46"/>
-       <use x="179.199219" xlink:href="#DejaVuSans-53"/>
-      </g>
-     </g>
-    </g>
-    <g id="xtick_3">
-     <g id="line2d_3">
-      <g>
-       <use style="stroke:#000000;stroke-width:0.8;" x="126.996145" xlink:href="#me592c1e7e3" y="224.64"/>
-      </g>
-     </g>
-     <g id="text_3">
-      <!-- 0.0 -->
-      <g transform="translate(119.044582 239.238437)scale(0.1 -0.1)">
-       <use xlink:href="#DejaVuSans-48"/>
-       <use x="63.623047" xlink:href="#DejaVuSans-46"/>
-       <use x="95.410156" xlink:href="#DejaVuSans-48"/>
-      </g>
-     </g>
-    </g>
-    <g id="xtick_4">
-     <g id="line2d_4">
-      <g>
-       <use style="stroke:#000000;stroke-width:0.8;" x="165.232783" xlink:href="#me592c1e7e3" y="224.64"/>
-      </g>
-     </g>
-     <g id="text_4">
-      <!-- 2.5 -->
-      <g transform="translate(157.28122 239.238437)scale(0.1 -0.1)">
-       <use xlink:href="#DejaVuSans-50"/>
-       <use x="63.623047" xlink:href="#DejaVuSans-46"/>
-       <use x="95.410156" xlink:href="#DejaVuSans-53"/>
-      </g>
-     </g>
-    </g>
-    <g id="xtick_5">
-     <g id="line2d_5">
-      <g>
-       <use style="stroke:#000000;stroke-width:0.8;" x="203.46942" xlink:href="#me592c1e7e3" y="224.64"/>
-      </g>
-     </g>
-     <g id="text_5">
-      <!-- 5.0 -->
-      <g transform="translate(195.517858 239.238437)scale(0.1 -0.1)">
-       <use xlink:href="#DejaVuSans-53"/>
-       <use x="63.623047" xlink:href="#DejaVuSans-46"/>
-       <use x="95.410156" xlink:href="#DejaVuSans-48"/>
-      </g>
-     </g>
-    </g>
-    <g id="xtick_6">
-     <g id="line2d_6">
-      <g>
-       <use style="stroke:#000000;stroke-width:0.8;" x="241.706058" xlink:href="#me592c1e7e3" y="224.64"/>
-      </g>
-     </g>
-     <g id="text_6">
-      <!-- 7.5 -->
-      <defs>
-       <path d="M 8.203125 72.90625 
-L 55.078125 72.90625 
-L 55.078125 68.703125 
-L 28.609375 0 
-L 18.3125 0 
-L 43.21875 64.59375 
-L 8.203125 64.59375 
-z
-" id="DejaVuSans-55"/>
-      </defs>
-      <g transform="translate(233.754495 239.238437)scale(0.1 -0.1)">
-       <use xlink:href="#DejaVuSans-55"/>
-       <use x="63.623047" xlink:href="#DejaVuSans-46"/>
-       <use x="95.410156" xlink:href="#DejaVuSans-53"/>
-      </g>
-     </g>
-    </g>
-    <g id="xtick_7">
-     <g id="line2d_7">
-      <g>
-       <use style="stroke:#000000;stroke-width:0.8;" x="279.942696" xlink:href="#me592c1e7e3" y="224.64"/>
-      </g>
-     </g>
-     <g id="text_7">
-      <!-- 10.0 -->
-      <defs>
-       <path d="M 12.40625 8.296875 
-L 28.515625 8.296875 
-L 28.515625 63.921875 
-L 10.984375 60.40625 
-L 10.984375 69.390625 
-L 28.421875 72.90625 
-L 38.28125 72.90625 
-L 38.28125 8.296875 
-L 54.390625 8.296875 
-L 54.390625 0 
-L 12.40625 0 
-z
-" id="DejaVuSans-49"/>
-      </defs>
-      <g transform="translate(268.809883 239.238437)scale(0.1 -0.1)">
-       <use xlink:href="#DejaVuSans-49"/>
-       <use x="63.623047" xlink:href="#DejaVuSans-48"/>
-       <use x="127.246094" xlink:href="#DejaVuSans-46"/>
-       <use x="159.033203" xlink:href="#DejaVuSans-48"/>
-      </g>
-     </g>
-    </g>
-    <g id="xtick_8">
-     <g id="line2d_8">
-      <g>
-       <use style="stroke:#000000;stroke-width:0.8;" x="318.179333" xlink:href="#me592c1e7e3" y="224.64"/>
-      </g>
-     </g>
-     <g id="text_8">
-      <!-- 12.5 -->
-      <g transform="translate(307.046521 239.238437)scale(0.1 -0.1)">
-       <use xlink:href="#DejaVuSans-49"/>
-       <use x="63.623047" xlink:href="#DejaVuSans-50"/>
-       <use x="127.246094" xlink:href="#DejaVuSans-46"/>
-       <use x="159.033203" xlink:href="#DejaVuSans-53"/>
-      </g>
-     </g>
-    </g>
-    <g id="xtick_9">
-     <g id="line2d_9">
-      <g>
-       <use style="stroke:#000000;stroke-width:0.8;" x="356.415971" xlink:href="#me592c1e7e3" y="224.64"/>
-      </g>
-     </g>
-     <g id="text_9">
-      <!-- 15.0 -->
-      <g transform="translate(345.283159 239.238437)scale(0.1 -0.1)">
-       <use xlink:href="#DejaVuSans-49"/>
-       <use x="63.623047" xlink:href="#DejaVuSans-53"/>
-       <use x="127.246094" xlink:href="#DejaVuSans-46"/>
-       <use x="159.033203" xlink:href="#DejaVuSans-48"/>
-      </g>
-     </g>
-    </g>
-   </g>
-   <g id="matplotlib.axis_2">
-    <g id="ytick_1">
-     <g id="line2d_10">
-      <defs>
-       <path d="M 0 0 
-L -3.5 0 
-" id="m3fd5ba4c98" style="stroke:#000000;stroke-width:0.8;"/>
-      </defs>
-      <g>
-       <use style="stroke:#000000;stroke-width:0.8;" x="35.304688" xlink:href="#m3fd5ba4c98" y="198.200859"/>
-      </g>
-     </g>
-     <g id="text_10">
-      <!-- −10 -->
-      <g transform="translate(7.2 202.000078)scale(0.1 -0.1)">
-       <use xlink:href="#DejaVuSans-8722"/>
-       <use x="83.789062" xlink:href="#DejaVuSans-49"/>
-       <use x="147.412109" xlink:href="#DejaVuSans-48"/>
-      </g>
-     </g>
-    </g>
-    <g id="ytick_2">
-     <g id="line2d_11">
-      <g>
-       <use style="stroke:#000000;stroke-width:0.8;" x="35.304688" xlink:href="#m3fd5ba4c98" y="165.089849"/>
-      </g>
-     </g>
-     <g id="text_11">
-      <!-- 0 -->
-      <g transform="translate(21.942188 168.889068)scale(0.1 -0.1)">
-       <use xlink:href="#DejaVuSans-48"/>
-      </g>
-     </g>
-    </g>
-    <g id="ytick_3">
-     <g id="line2d_12">
-      <g>
-       <use style="stroke:#000000;stroke-width:0.8;" x="35.304688" xlink:href="#m3fd5ba4c98" y="131.97884"/>
-      </g>
-     </g>
-     <g id="text_12">
-      <!-- 10 -->
-      <g transform="translate(15.579688 135.778058)scale(0.1 -0.1)">
-       <use xlink:href="#DejaVuSans-49"/>
-       <use x="63.623047" xlink:href="#DejaVuSans-48"/>
-      </g>
-     </g>
-    </g>
-    <g id="ytick_4">
-     <g id="line2d_13">
-      <g>
-       <use style="stroke:#000000;stroke-width:0.8;" x="35.304688" xlink:href="#m3fd5ba4c98" y="98.86783"/>
-      </g>
-     </g>
-     <g id="text_13">
-      <!-- 20 -->
-      <g transform="translate(15.579688 102.667049)scale(0.1 -0.1)">
-       <use xlink:href="#DejaVuSans-50"/>
-       <use x="63.623047" xlink:href="#DejaVuSans-48"/>
-      </g>
-     </g>
-    </g>
-    <g id="ytick_5">
-     <g id="line2d_14">
-      <g>
-       <use style="stroke:#000000;stroke-width:0.8;" x="35.304688" xlink:href="#m3fd5ba4c98" y="65.75682"/>
-      </g>
-     </g>
-     <g id="text_14">
-      <!-- 30 -->
-      <defs>
-       <path d="M 40.578125 39.3125 
-Q 47.65625 37.796875 51.625 33 
-Q 55.609375 28.21875 55.609375 21.1875 
-Q 55.609375 10.40625 48.1875 4.484375 
-Q 40.765625 -1.421875 27.09375 -1.421875 
-Q 22.515625 -1.421875 17.65625 -0.515625 
-Q 12.796875 0.390625 7.625 2.203125 
-L 7.625 11.71875 
-Q 11.71875 9.328125 16.59375 8.109375 
-Q 21.484375 6.890625 26.8125 6.890625 
-Q 36.078125 6.890625 40.9375 10.546875 
-Q 45.796875 14.203125 45.796875 21.1875 
-Q 45.796875 27.640625 41.28125 31.265625 
-Q 36.765625 34.90625 28.71875 34.90625 
-L 20.21875 34.90625 
-L 20.21875 43.015625 
-L 29.109375 43.015625 
-Q 36.375 43.015625 40.234375 45.921875 
-Q 44.09375 48.828125 44.09375 54.296875 
-Q 44.09375 59.90625 40.109375 62.90625 
-Q 36.140625 65.921875 28.71875 65.921875 
-Q 24.65625 65.921875 20.015625 65.03125 
-Q 15.375 64.15625 9.8125 62.3125 
-L 9.8125 71.09375 
-Q 15.4375 72.65625 20.34375 73.4375 
-Q 25.25 74.21875 29.59375 74.21875 
-Q 40.828125 74.21875 47.359375 69.109375 
-Q 53.90625 64.015625 53.90625 55.328125 
-Q 53.90625 49.265625 50.4375 45.09375 
-Q 46.96875 40.921875 40.578125 39.3125 
-z
-" id="DejaVuSans-51"/>
-      </defs>
-      <g transform="translate(15.579688 69.556039)scale(0.1 -0.1)">
-       <use xlink:href="#DejaVuSans-51"/>
-       <use x="63.623047" xlink:href="#DejaVuSans-48"/>
-      </g>
-     </g>
-    </g>
-    <g id="ytick_6">
-     <g id="line2d_15">
-      <g>
-       <use style="stroke:#000000;stroke-width:0.8;" x="35.304688" xlink:href="#m3fd5ba4c98" y="32.645811"/>
-      </g>
-     </g>
-     <g id="text_15">
-      <!-- 40 -->
-      <defs>
-       <path d="M 37.796875 64.3125 
-L 12.890625 25.390625 
-L 37.796875 25.390625 
-z
-M 35.203125 72.90625 
-L 47.609375 72.90625 
-L 47.609375 25.390625 
-L 58.015625 25.390625 
-L 58.015625 17.1875 
-L 47.609375 17.1875 
-L 47.609375 0 
-L 37.796875 0 
-L 37.796875 17.1875 
-L 4.890625 17.1875 
-L 4.890625 26.703125 
-z
-" id="DejaVuSans-52"/>
-      </defs>
-      <g transform="translate(15.579688 36.44503)scale(0.1 -0.1)">
-       <use xlink:href="#DejaVuSans-52"/>
-       <use x="63.623047" xlink:href="#DejaVuSans-48"/>
-      </g>
-     </g>
-    </g>
-   </g>
-   <g id="line2d_16">
-    <path clip-path="url(#p42e4fd3385)" d="M 50.522869 214.756364 
-L 354.886506 17.083636 
-L 354.886506 17.083636 
-" style="fill:none;stroke:#1f77b4;stroke-linecap:square;stroke-width:1.5;"/>
-   </g>
-   <g id="patch_3">
-    <path d="M 35.304688 224.64 
-L 35.304688 7.2 
-" style="fill:none;stroke:#000000;stroke-linecap:square;stroke-linejoin:miter;stroke-width:0.8;"/>
-   </g>
-   <g id="patch_4">
-    <path d="M 370.104688 224.64 
-L 370.104688 7.2 
-" style="fill:none;stroke:#000000;stroke-linecap:square;stroke-linejoin:miter;stroke-width:0.8;"/>
-   </g>
-   <g id="patch_5">
-    <path d="M 35.304688 224.64 
-L 370.104688 224.64 
-" style="fill:none;stroke:#000000;stroke-linecap:square;stroke-linejoin:miter;stroke-width:0.8;"/>
-   </g>
-   <g id="patch_6">
-    <path d="M 35.304688 7.2 
-L 370.104688 7.2 
-" style="fill:none;stroke:#000000;stroke-linecap:square;stroke-linejoin:miter;stroke-width:0.8;"/>
-   </g>
-  </g>
- </g>
- <defs>
-  <clipPath id="p42e4fd3385">
-   <rect height="217.44" width="334.8" x="35.304688" y="7.2"/>
-  </clipPath>
- </defs>
-</svg>
 
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+"
+>
 </div>
 
 </div>
@@ -13653,9 +11887,67 @@ L 370.104688 7.2
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="1.3--&#20316;&#19994;">1.3  &#20316;&#19994;<a class="anchor-link" href="#1.3--&#20316;&#19994;">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="1.3.1--&#32534;&#20889;makefile&#25991;&#20214;&#65292;&#25226;wfdb&#32534;&#35793;&#25104;&#24211;">1.3.1  &#32534;&#20889;makefile&#25991;&#20214;&#65292;&#25226;wfdb&#32534;&#35793;&#25104;&#24211;<a class="anchor-link" href="#1.3.1--&#32534;&#20889;makefile&#25991;&#20214;&#65292;&#25226;wfdb&#32534;&#35793;&#25104;&#24211;">&#182;</a></h3>
+<pre><code>// 在此加入你们编写的makefile文件代码</code></pre>
 
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="1.3.2--&#22312;test/main.c-&#20013;&#35843;&#29992;wfdb&#65292;&#35835;&#21462;ate&#25991;&#20214;&#65292;&#25226;R&#27874;&#20301;&#32622;&#23384;&#20648;&#25104;&#25991;&#20214;">1.3.2  &#22312;test/main.c &#20013;&#35843;&#29992;wfdb&#65292;&#35835;&#21462;ate&#25991;&#20214;&#65292;&#25226;R&#27874;&#20301;&#32622;&#23384;&#20648;&#25104;&#25991;&#20214;<a class="anchor-link" href="#1.3.2--&#22312;test/main.c-&#20013;&#35843;&#29992;wfdb&#65292;&#35835;&#21462;ate&#25991;&#20214;&#65292;&#25226;R&#27874;&#20301;&#32622;&#23384;&#20648;&#25104;&#25991;&#20214;">&#182;</a></h3>
+<pre><code>//在此加入main.c中的核心代码</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="1.3.3--&#29087;&#24713;Markdown&#35821;&#27861;,-&#22312;&#19979;&#38754;&#21152;&#20837;&#20320;&#20204;&#23545;markdown&#35821;&#27861;&#30340;&#23398;&#20064;&#31508;&#35760;">1.3.3  &#29087;&#24713;Markdown&#35821;&#27861;,<font color="#006666"> &#22312;&#19979;&#38754;&#21152;&#20837;&#20320;&#20204;&#23545;markdown&#35821;&#27861;&#30340;&#23398;&#20064;&#31508;&#35760;</font><br /><a class="anchor-link" href="#1.3.3--&#29087;&#24713;Markdown&#35821;&#27861;,-&#22312;&#19979;&#38754;&#21152;&#20837;&#20320;&#20204;&#23545;markdown&#35821;&#27861;&#30340;&#23398;&#20064;&#31508;&#35760;">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="1.3.4-&#32534;&#20889;&#20195;&#30721;&#35835;&#21462;atr&#25991;&#20214;&#20013;R&#27874;&#20301;&#32622;&#30340;&#25991;&#20214;&#65292;&#35745;&#31639;&#24515;&#29575;&#26354;&#32447;&#12290;&#35201;&#27714;&#24515;&#29575;&#27599;&#19968;&#31186;&#26356;&#26032;&#19968;&#27425;&#65292;&#30011;&#20986;100.atr&#25991;&#20214;&#30340;&#24515;&#29575;&#26354;&#32447;">1.3.4 &#32534;&#20889;&#20195;&#30721;&#35835;&#21462;atr&#25991;&#20214;&#20013;R&#27874;&#20301;&#32622;&#30340;&#25991;&#20214;&#65292;&#35745;&#31639;&#24515;&#29575;&#26354;&#32447;&#12290;&#35201;&#27714;&#24515;&#29575;&#27599;&#19968;&#31186;&#26356;&#26032;&#19968;&#27425;&#65292;&#30011;&#20986;100.atr&#25991;&#20214;&#30340;&#24515;&#29575;&#26354;&#32447;<a class="anchor-link" href="#1.3.4-&#32534;&#20889;&#20195;&#30721;&#35835;&#21462;atr&#25991;&#20214;&#20013;R&#27874;&#20301;&#32622;&#30340;&#25991;&#20214;&#65292;&#35745;&#31639;&#24515;&#29575;&#26354;&#32447;&#12290;&#35201;&#27714;&#24515;&#29575;&#27599;&#19968;&#31186;&#26356;&#26032;&#19968;&#27425;&#65292;&#30011;&#20986;100.atr&#25991;&#20214;&#30340;&#24515;&#29575;&#26354;&#32447;">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 在下面编写python代码，画出100.atr的心率曲线</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="1.3.5-&#36816;&#34892;charp01.ipynb&#25991;&#20214;&#65292;&#20445;&#23384;&#20026;xml&#65292;&#22312;&#19979;&#33410;&#35838;&#21069;&#21457;&#36865;&#21040;&#37038;&#31665;guangyubin@qq.com.-&#26412;&#20316;&#19994;&#21344;10&#20998;">1.3.5 &#36816;&#34892;charp01.ipynb&#25991;&#20214;&#65292;&#20445;&#23384;&#20026;xml&#65292;&#22312;&#19979;&#33410;&#35838;&#21069;&#21457;&#36865;&#21040;&#37038;&#31665;guangyubin@qq.com. &#26412;&#20316;&#19994;&#21344;10&#20998;<a class="anchor-link" href="#1.3.5-&#36816;&#34892;charp01.ipynb&#25991;&#20214;&#65292;&#20445;&#23384;&#20026;xml&#65292;&#22312;&#19979;&#33410;&#35838;&#21069;&#21457;&#36865;&#21040;&#37038;&#31665;guangyubin@qq.com.-&#26412;&#20316;&#19994;&#21344;10&#20998;">&#182;</a></h3>
 </div>
 </div>
 </div>
